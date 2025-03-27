@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Desktop -->
+    <style>
+      .pointeGraphics {
+        margin-right: 5px;
+        width: 120px;
+        height: 100px;
+      }
+      .terms {
+        display: none;
+      }
+      .full {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .half {
+        width: 49%;
+        box-sizing: border-box;
+      }
+      .oneThird {
+        width: 33%;
+        box-sizing: border-box;
+      }
+      .oneQuarter {
+        width: 25%;
+        box-sizing: border-box;
+      }
+      .twoThirds {
+        width: 66%;
+        box-sizing: border-box;
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
+      .clr {
+        clear: both;
+      }
+      .contract .priceLabel {
+        float: left;
+        width: 45%;
+      }
+      .contract .priceValue {
+        float: right;
+        width: 45%;
+        text-align: right;
+      }
+      .optionalServices li .optionalPrice,
+      .optionalServices li div {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+      .optionalServices li .optionalService {
+        position: static;
+        float: left;
+        text-align: left;
+      }
+      .optionalServices li img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+      .optionalServices {
+        margin: 0px;
+        padding: 0px;
+      }
+      .optionalServices li {
+        width: 100%;
+        margin-left: 0%;
+        float: left;
+        line-height: 25px;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        position: relative;
+      }
+      .ecoshieldPestLevels div {
+        width: 75%;
+        left: 25%;
+        top: 0px;
+        z-index: 11;
+        position: absolute;
+      }
+      .ecoshieldPestLevels img {
+        width: 90%;
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin-top: 70px;
+      }
+      .ecoshieldPestLevels {
+        height: 165px;
+        position: relative;
+      }
+      .contractGuarantee {
+        width: 70%;
+        max-width: 300px;
+      }
+      .contract {
+        margin-top: 0px;
+        font-family: Arial;
+        font-size: 10pt;
+      }
+      .contract .thirdLeft {
+        width: 32%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 11px;
+        min-width: 300px;
+      }
+      .contract .thirdRight {
+        width: 59%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 11px;
+        min-width: 300px;
+      }
+      .contract .halfLeft {
+        width: 47%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 11px;
+        min-width: 300px;
+      }
+      .contract .halfRight {
+        width: 47%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 11px;
+        min-width: 300px;
+      }
+      .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .extraUL div span {
+        font-weight: bold;
+      }
+      .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 45%;
+        margin-right: 3%;
+        float: left;
+        /* 		display: inline-table; */
+
+        font-size: 9px;
+      }
+      .miniLogo {
+        width: 100%;
+        position: relative;
+        height: 80%;
+      }
+      .miniLogo .miniText {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        font-size: 20px;
+      }
+      .miniLogo img {
+        width: 200px;
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+      .contract .logoDiv {
+        position: absolute;
+        float: left;
+        top: 80px;
+        left: 10px;
+        font-size: 16px;
+        height: 100%;
+      }
+      .contract .officeInfo {
+        text-align: right;
+        font-size: 11px;
+        font-weight: bold;
+        float: right;
+        margin-top: 2px;
+        right: 5px;
+        width: 50%;
+        line-height: 15px;
+      }
+      .contract .header h1 {
+        text-align: center;
+        margin: 3px 0px;
+        position: absolute;
+        top: 10px;
+        padding: 0px;
+        width: 100%;
+        font-size: 13pt;
+        text-transform: uppercase;
+        color: #343434;
+        clear: both;
+        text-shadow: 1px 1px #898989;
+      }
+      .contract .header {
+        color: #343434;
+        width: 96%;
+        padding: 5px 0px;
+        position: relative;
+        top: 0px;
+        background-color: #aa0000;
+        height: 60px;
+        padding: 5px 2%;
+        border-radius: 10px;
+      }
+      .contract .calendar {
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+      }
+      .contract .calendar div .month {
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        font-size: 11px;
+        line-height: 16px;
+        height: 16px;
+        background-color: #006633;
+        color: #fff;
+        margin: 0px 0px 2px 0px;
+      }
+      .contract .calendar div {
+        width: 15%;
+        margin: 2px 2px;
+        height: 34px;
+        line-height: 16px;
+        float: left;
+        border: 1px solid #898989;
+        padding: 0px;
+        background-color: #fff;
+      }
+      .contract .targetInsects div img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+      .contract .targetInsects div {
+        list-style: none;
+        width: 24%;
+        float: left;
+        font-size: 9px;
+        line-height: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+      .contract .targetInsects {
+        clear: both;
+      }
+      .contract .moxieLineRule div {
+        height: 4px;
+        background-color: #aa0000;
+        width: 100%;
+      }
+      .contract .moxieLineRule {
+        width: 100%;
+        border: 1px solid green;
+        padding: 1px 0px;
+        border-left: none;
+        border-right: none;
+        margin: 6px 0px;
+      }
+      .contract .pointeHeader {
+        color: #006633;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .contract h3,
+      .contract h4 {
+        width: 100%;
+        text-align: left;
+        padding: 0px;
+        color: #fff;
+        background-color: #006633;
+        text-align: center;
+        height: 18px;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 3px 0px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+      .contract .filledBox {
+        background-color: #006633;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+        padding: 4px 1%;
+        color: #fff;
+        font-size: 9px;
+        text-align: justify;
+      }
+      .contract .borderBox {
+        border: 1px solid #5a9364;
+        padding: 2px 1% 2px 1%;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+        line-height: 16px;
+      }
+      .contract .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .contract .extraUL div span {
+        font-weight: bold;
+      }
+      .contract .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 30%;
+        margin-right: 3%;
+        float: left;
+      }
+      .contract .val1 {
+        width: 35%;
+        text-align: right;
+        float: right;
+        height: 16px;
+        line-height: 16px;
+        font-size: 11px;
+      }
+      .contract .lbl1 {
+        width: 60%;
+        clear: both;
+        height: 16px;
+        line-height: 16px;
+        font-weight: bold;
+        float: left;
+        font-size: 11px;
+      }
+      .contract div {
+        font-size: 10px;
+      }
+    </style>
+
+    <!-- Mobile -->
+    <style>
+      .goldstar {
+        display: none;
+      }
+      .contract .priceLabel {
+        float: left;
+        width: 45%;
+        margin-left: 3%;
+      }
+      .contract .priceValue {
+        float: right;
+        width: 45%;
+        text-align: right;
+      }
+      .contract .full {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .half {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .oneThird {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .oneQuarter {
+        width: 50%;
+        box-sizing: border-box;
+      }
+      .contract .twoThirds {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .left {
+        float: left;
+      }
+      .contract .right {
+        float: right;
+      }
+      .contract .clr {
+        clear: both;
+      }
+      div {
+        box-sizing: border-box;
+      }
+      .optionalServices li .optionalService {
+        float: left;
+        text-align: left;
+      }
+      .optionalServices li .optionalPrice {
+        float: right;
+        text-align: right;
+      }
+      .optionalServices li img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+      .optionalServices {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .optionalServices li {
+        width: 44%;
+        margin-left: 15px;
+        min-width: 320px;
+        float: left;
+        list-style-type: none;
+      }
+      .ecoshieldPestLevels img {
+        width: 95%;
+      }
+      .ecoshieldPestLevels div {
+        width: 100%;
+        clear: both;
+        float: left;
+        margin-bottom: 10px;
+      }
+      .ecoshieldPestLevels {
+        position: relative;
+      }
+      .contract {
+        margin-top: 0px;
+        font-family: Arial;
+        font-size: 17px;
+        position: relative;
+        background-color: #fff;
+      }
+      .contract .thirdLeft {
+        width: 100%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+      .contract .thirdRight {
+        width: 100%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 17px;
+      }
+      .contract .halfLeft {
+        width: 100%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+      .contract .halfRight {
+        width: 100%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 17px;
+      }
+      .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .extraUL div span {
+        font-weight: bold;
+      }
+      .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 45%;
+        margin-right: 3%;
+        float: left;
+        font-size: 17px;
+      }
+      .miniLogo {
+        width: 100%;
+        position: relative;
+      }
+      .miniLogo .miniText {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        font-size: 24px;
+      }
+      .miniLogo img {
+        width: 50px;
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+      .contract .logoDiv {
+        font-size: 20px;
+        float: left;
+        clear: both;
+        width: 100%;
+        display: none;
+      }
+      .contractGuarantee {
+        width: 70%;
+        max-width: 250px;
+      }
+      .contract .officeInfo {
+        font-size: 17px;
+        font-weight: normal;
+        float: left;
+        clear: both;
+        width: 100%;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .contract .header h1 {
+        text-align: center;
+        margin: 3px 0px;
+        padding: 0px;
+        width: 100%;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: green;
+        clear: both;
+        text-shadow: 1px 1px #898989;
+        position: absolute;
+        top: 10px;
+      }
+      .contract .header {
+        color: #232323;
+        width: 96%;
+        padding: 5px 0px;
+        position: relative;
+        top: 0px;
+        height: 110px;
+        padding: 5px 2%;
+        border-radius: 10px;
+      }
+      .contract .calendar {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+      }
+      .contract .calendar div .month {
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        font-size: 17px;
+        height: 22px;
+        background-color: green;
+        color: #fff;
+        margin: 0px 0px 2px 0px;
+      }
+      .contract .calendar div {
+        min-width: 16%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 2px 2px;
+        height: 50px;
+        border: 1px solid #898989;
+        padding: 0px;
+        background-color: #fff;
+      }
+      .contract .targetInsects div img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+      .contract .targetInsects div {
+        list-style: none;
+        width: 22%;
+        margin-left: 2%;
+        min-width: 150px;
+        float: left;
+        font-size: 15px;
+        position: relative;
+        overflow: hidden;
+      }
+      .contract .targetInsects {
+        clear: both;
+        margin: 0px;
+        padding: 0px;
+      }
+      .contract .moxieLineRule div {
+        height: 4px;
+        background-color: green;
+        width: 100%;
+      }
+      .contract .moxieLineRule {
+        width: 100%;
+        border: 1px solid green;
+        padding: 1px 0px;
+        border-left: none;
+        border-right: none;
+        margin: 6px 0px;
+      }
+      .contract h3,
+      .contract h4 {
+        width: 100%;
+        color: #fff;
+        background-color: green;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        margin: 3px 0px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      .contract .filledBox {
+        background-color: green;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+        padding: 4px 1%;
+        color: #fff;
+        font-size: 15px;
+        text-align: justify;
+      }
+      .contract .borderBox {
+        border: 1px solid #5a9364;
+        padding: 2px 1% 2px 1%;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+      }
+      .contract .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .contract .extraUL div span {
+        font-weight: bold;
+      }
+      .contract .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 30%;
+        margin-right: 3%;
+        float: left;
+      }
+      .contract .val1 {
+        width: 40%;
+        text-align: right;
+        float: right;
+        height: 20px;
+        font-size: 17px;
+      }
+      .contract .lbl1 {
+        width: 55%;
+        clear: both;
+        height: 20px;
+        font-weight: bold;
+        float: left;
+        font-size: 17px;
+      }
+      .contract div {
+        font-size: 15px;
+      }
+      span.salesRepName {
+        font-size: 17px;
+        text-align: center;
+      }
+      .miniText span {
+        font-size: 24px;
+      }
+      #yearRound {
+        font-size: 15px;
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contract">
+      <div
+        class="header"
+        style="
+          background-color: transparent;
+          height: auto;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div class="info">
+          <h1
+            style="
+              text-align: left;
+              color: #4c713a;
+              text-shadow: none;
+              font-weight: 800;
+              position: unset;
+            "
+          >
+            Service Agrement
+          </h1>
+          <div class="">
+            {{officeName}}<br />
+            {{officeAddress}}<br />
+            {{officeCity}}, {{officeState}} {{officeZip}}<br />
+            {{officePhone}} | {{officeEmail}}<br />
+            License #: {{officeLicenseNumber}}
+          </div>
+        </div>
+        <div class="">
+          <div class="">
+            <img
+              src="{{officeLogo}}"
+              style="height: 60px; width: auto; cursor: pointer"
+            />
+            <div class="month">{{month}} {{year}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="clear: both; height: 5px"></div>
+      <div class="half left">
+        <h3>Service Address</h3>
+        {{customerName}}<br />
+        {{address}}<br />
+        {{city}}, {{state}} {{zip}}<br />{{mapCode}}
+      </div>
+
+      <div class="half right">
+        <h3>Customer Information</h3>
+        {{email}}<br />
+        {{phone1}} | {{phone2}}<br />
+        <b>Notes: </b>{{notes}}
+      </div>
+
+      <div style="clear: both; height: 5px"></div>
+      <div style="width: 100%; border: 0px">
+        <h3>Included Insects</h3>
+        <div class="targetInsects">
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/cockroach.png"
+              style="cursor: pointer"
+            />Roach
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/silverfish.png"
+              style="cursor: pointer"
+            />Silverfish
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/fireant.png"
+              style="cursor: pointer"
+            />Argentine Ants
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/cricket.png"
+              style="cursor: pointer"
+            />Crickets
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/millipede.jpg"
+              style="cursor: pointer"
+            />Millipedes
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/pillbug.png"
+              style="cursor: pointer"
+            />Sow Bugs
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/boxelder.jpg"
+              style="cursor: pointer"
+            />Box Elders
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/earwig.png"
+              style="cursor: pointer"
+            />Earwigs
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/ant.png"
+              style="cursor: pointer"
+            />Odorous Ants
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/spider.png"
+              style="cursor: pointer"
+            />Spiders
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/centipede.jpg"
+              style="cursor: pointer"
+            />Centipedes
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/cockroach.png"
+              style="cursor: pointer"
+            />Oriental Roaches
+          </div>
+        </div>
+      </div>
+      <div style="clear: both; height: 5px"></div>
+      <div style="width: 100%; border: 0px">
+        <h3>Additional Pests</h3>
+        <div class="targetInsects">
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/rat.png"
+              style="cursor: pointer"
+            />Mice/Rats
+          </div>
+
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/flea.png"
+              style="cursor: pointer"
+            />Fleas
+          </div>
+
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/wasp.png"
+              style="cursor: pointer"
+            />Wasps/Hornets
+          </div>
+
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/ant.png"
+              style="cursor: pointer"
+            />Carpenter Ants
+          </div>
+        </div>
+        <div style="clear: both; height: 5px"></div>
+
+        <div style="width: 100%; border: 0px">
+          <h3>Year Round Pest Barriers</h3>
+          <div class="half left" id="yearRound">
+            <img
+              src="http://img.pestroutes.com/resources/printing/contracts/eggCycleGraphic.gif"
+              alt="ecoshieldEggCycle"
+              width="25%"
+              style="float: left; cursor: pointer"
+            />
+            <p style="overflow: hidden; margin-top: 0px">
+              The first treatment around your home is what is called an 'initial
+              flush out'. This special treatment attempts to gain control over
+              existing pest populations.
+              <strong
+                >Your first regular treatment should follow within 30-45 days of
+                the initial treatment to help break up egg cycles.</strong
+              >
+              Insects are immune to treatments while in their egg shells and our
+              products must be active to catch pests as they hatch.
+            </p>
+          </div>
+          <div class="half right">
+            <img
+              src="http://img.pestroutes.com/resources/printing/contracts/insectActivityGraphic.gif"
+              style="width: 90px; float: left; cursor: pointer"
+              alt="ecoshieldPestLevels"
+            />
+            <p style="overflow: hidden; margin-top: 0px">
+              Initially you may see a slight increase in pest activity as pest
+              populations are disrupted. Within a few weeks you should see this
+              activity drastically decline as our products take effect. Over
+              time, these pest levels will continually decrease as regular
+              services are performed. Regular treatments are critical in
+              maintaining protective barriers and preventing infestations from
+              reoccurring. If you see more than the occasional pest around your
+              home, please call {{officePhone}} at any time for a complimentary
+              retreat!
+            </p>
+          </div>
+        </div>
+
+        <div class="clr"></div>
+
+        <div style="width: 100%; border: 0px">
+          <h4 style="margin: 4px 0px">{{description}} Subscription</h4>
+          <div class="calendar">
+            {{#serviceSchedule}}
+            <div>{{{recurringCharge}}}</div>
+            {{/serviceSchedule}}
+          </div>
+        </div>
+
+        <div class="clr"></div>
+
+        <div class="half left">
+          <h4 style="margin: 4px 0px">Initial Service / Warranties</h4>
+          <div class="priceLabel">Initial Quote:</div>
+          <div class="priceValue">${{initialQuote}}</div>
+          <div class="priceLabel">Initial Discount:</div>
+          <div class="priceValue">(${{initialDiscount}})</div>
+
+          <div style="clear: both; height: 5px">&nbsp;</div>
+          {{#addOns}}
+          <div class="priceLabel">{{description}}:</div>
+          <div class="priceValue">${{amount}}</div>
+          {{/addOns}}
+          <div style="clear: both; height: 5px">&nbsp;</div>
+
+          <div class="priceLabel">Sub Total:</div>
+          <div class="priceValue">${{initialSubTotal}}</div>
+          <div class="priceLabel">Tax ({{taxPercent}}):</div>
+          <div class="priceValue">${{initialTax}}</div>
+
+          <div style="clear: both; height: 5px">&nbsp;</div>
+
+          <div class="priceLabel bold">Initial Total:</div>
+          <div class="priceValue bold">${{initialTotal}}</div>
+        </div>
+
+        <div class="half right">
+          <h4 style="margin: 4px 0px">Recurring Services</h4>
+          <div class="priceLabel">Service Charge:</div>
+          <div class="priceValue">${{recurringServiceCharge}}</div>
+
+          <div style="clear: both; height: 5px">&nbsp;</div>
+          {{#addOnsRecurring}}
+          <div class="priceLabel">{{description}}:</div>
+          <div class="priceValue">${{amount}}</div>
+          {{/addOnsRecurring}}
+          <div style="clear: both; height: 5px">&nbsp;</div>
+
+          <div class="priceLabel">Tax ({{taxPercent}}):</div>
+          <div class="priceValue">${{recurringTax}}</div>
+
+          <div class="priceLabel bold">Recurring Total:</div>
+          <div class="priceValue bold">${{recurringTotal}}</div>
+          <div style="clear: both; min-height: 3px; height: 3px"></div>
+          <p style="font-weight: bold; font-style: italic">
+            {{recurringNotes}}
+          </p>
+        </div>
+
+        <div class="clr"></div>
+
+        <div class="filledBox">
+          You, the customer, may cancel this transaction anytime prior to
+          midnight of the third business day after the date of this transaction
+          by giving written notice of cancellation to {{officeName}}. If for any
+          reason, at any time, the contract is canceled before its completion,
+          and the initial service has been performed, customer agrees to pay the
+          full initial service charge. Upon completion of this agreement
+          treatments will continue at the same frequency until canceled by the
+          customer.
+        </div>
+
+        <div style="clear: both; height: 5px"></div>
+
+        <div class="half left">
+          <h3>Billing Info</h3>
+          {{billingname}}<br />
+          {{billingaddress}}<br />
+          {{billingcity}}, {{billingstate}} {{billingzip}}
+        </div>
+
+        <div class="half right">
+          <h3>Payment Information</h3>
+          <div style="float: left; width: 48%">{{billingname}}</div>
+          <div style="float: right; width: 48%">{{{paymentMethod}}}</div>
+          <br /><br />
+          <i
+            >I authorize {{officeName}} to automatically bill my debit/credit
+            card upon completion of each service.</i
+          >
+        </div>
+        <div style="clear: both; height: 5px"></div>
+      </div>
+    </div>
+  </body>
+</html>
