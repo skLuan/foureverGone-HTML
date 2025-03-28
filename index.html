@@ -351,7 +351,7 @@
     </style>
 
     <!-- Mobile -->
-    <style>
+    <!-- <style>
       .goldstar {
         display: none;
       }
@@ -678,10 +678,10 @@
         margin: 0px;
         padding: 0px;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <div class="contract">
+    <div class="contract" style="padding: 24px; background: linear-gradient(215deg, rgba(255, 255, 255, 0.15) 31.27%, rgba(128, 180, 106, 0.15) 90.91%), #FFF;">
       <div
         class="header"
         style="
@@ -689,6 +689,8 @@
           height: auto;
           display: flex;
           justify-content: space-between;
+          padding: 0;
+          margin-bottom: 24px;
         "
       >
         <div class="info">
@@ -697,13 +699,13 @@
               text-align: left;
               color: #4c713a;
               text-shadow: none;
-              font-weight: 800;
+              font-weight: 700;
               position: unset;
             "
           >
             Service Agrement
           </h1>
-          <div class="">
+          <div class="" style="font-size: 16px; color: #232323">
             {{officeName}}<br />
             {{officeAddress}}<br />
             {{officeCity}}, {{officeState}} {{officeZip}}<br />
@@ -717,29 +719,197 @@
               src="{{officeLogo}}"
               style="height: 60px; width: auto; cursor: pointer"
             />
-            <div class="month">{{month}} {{year}}</div>
+            <div class="month" style="font-size: 16px; color: #232323">
+              {{month}} {{year}}
+            </div>
           </div>
         </div>
       </div>
 
       <div style="clear: both; height: 5px"></div>
-      <div class="half left">
-        <h3>Service Address</h3>
-        {{customerName}}<br />
-        {{address}}<br />
-        {{city}}, {{state}} {{zip}}<br />{{mapCode}}
+      <div class="half left" style="font-size: 16px; color: #232323">
+        <h3
+          style="
+            background-color: transparent;
+            color: #4c713a;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: left;
+          "
+        >
+          About the Service
+        </h3>
+        <p>{{description}}</p>
+        <p>
+          {{notes}}
+          <br />
+          {{#addOns}} {{/addOns}}
+          <br />
+          {{#addOnsRecurring}} {{/addOnsRecurring}}
+        </p>
       </div>
-
       <div class="half right">
-        <h3>Customer Information</h3>
-        {{email}}<br />
-        {{phone1}} | {{phone2}}<br />
-        <b>Notes: </b>{{notes}}
+        <h3
+          style="
+            background-color: transparent;
+            color: #4c713a;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: left;
+          "
+        >
+          Service Address
+        </h3>
+        <!-- line -->
+        <div
+          style="display: flex; justify-content: space-between; padding: 4px 0"
+        >
+          <span style="font-size: 14px; font-weight: 700">
+            Customer Name:
+          </span>
+          <span style="font-size: 18px">{{customerName}}</span>
+        </div>
+        <!-- line -->
+        <div style="display: flex; justify-content: space-between">
+          <span style="font-size: 14px; font-weight: 700"> Address: </span>
+          <span style="font-size: 18px; text-align: right; color: #232323"
+            >{{address}}<br />
+            {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
+          >
+        </div>
+        <div class="">
+          <h4
+            style="
+              background-color: transparent;
+              font-weight: 600;
+              color: #4c713a;
+              text-align: left;
+              font-size: 18px;
+              padding: 2px 0;
+            "
+          >
+            Customer Information
+          </h4>
+          <!-- line -->
+          <div style="display: flex; justify-content: space-between">
+            <span style="font-size: 14px; font-weight: 700"> Email: </span>
+            <span style="font-size: 18px; text-align: right; color: #232323"
+              >{{email}}
+            </span>
+          </div>
+          <!-- line -->
+          <div style="display: flex; justify-content: space-between">
+            <span style="font-size: 14px; font-weight: 700"> Phones: </span>
+            <span style="font-size: 18px; text-align: right; color: #232323"
+              >{{phone1}} <br />
+              {{phone2}}
+            </span>
+          </div>
+        </div>
       </div>
 
       <div style="clear: both; height: 5px"></div>
+      <div class="clr"></div>
+
       <div style="width: 100%; border: 0px">
-        <h3>Included Insects</h3>
+        <h4 style="margin: 4px 0px; font-weight: 700; font-size: 20px; background-color: transparent; text-align: left; color: #4C713A;">Service and Payment Schedule Subscription</h4>
+        <div class="calendar" style="font-size: 18px; padding: 12px;">
+          {{#serviceSchedule}}
+          {{/serviceSchedule}}
+        </div>
+      </div>
+      <!-- Services -->
+      <div style="width: 100%; border: 0px">
+
+        <div class="clr"></div>
+
+        <div class="half left">
+          <h4 style="margin: 4px 0px">Initial Service / Warranties</h4>
+          <div class="priceLabel">Initial Quote:</div>
+          <div class="priceValue">${{initialQuote}}</div>
+          <div class="priceLabel">Initial Discount:</div>
+          <div class="priceValue">(${{initialDiscount}})</div>
+
+          <div style="clear: both; height: 5px">&nbsp;</div>
+          {{#addOns}}
+          <div class="priceLabel">{{description}}:</div>
+          <div class="priceValue">${{amount}}</div>
+          {{/addOns}}
+          <div style="clear: both; height: 5px">&nbsp;</div>
+
+          <div class="priceLabel">Sub Total:</div>
+          <div class="priceValue">${{initialSubTotal}}</div>
+          <div class="priceLabel">Tax ({{taxPercent}}):</div>
+          <div class="priceValue">${{initialTax}}</div>
+
+          <div style="clear: both; height: 5px">&nbsp;</div>
+
+          <div class="priceLabel bold">Initial Total:</div>
+          <div class="priceValue bold">${{initialTotal}}</div>
+        </div>
+
+        <div class="half right">
+          <h4 style="margin: 4px 0px">Recurring Services</h4>
+          <div class="priceLabel">Service Charge:</div>
+          <div class="priceValue">${{recurringServiceCharge}}</div>
+
+          <div style="clear: both; height: 5px">&nbsp;</div>
+          {{#addOnsRecurring}}
+          <div class="priceLabel">{{description}}:</div>
+          <div class="priceValue">${{amount}}</div>
+          {{/addOnsRecurring}}
+          <div style="clear: both; height: 5px">&nbsp;</div>
+
+          <div class="priceLabel">Tax ({{taxPercent}}):</div>
+          <div class="priceValue">${{recurringTax}}</div>
+
+          <div class="priceLabel bold">Recurring Total:</div>
+          <div class="priceValue bold">${{recurringTotal}}</div>
+          <div style="clear: both; min-height: 3px; height: 3px"></div>
+          <p style="font-weight: bold; font-style: italic">
+            {{recurringNotes}}
+          </p>
+          
+        </div>
+
+        <div class="clr"></div>
+
+        <div class="filledBox">
+          You, the customer, may cancel this transaction anytime prior to
+          midnight of the third business day after the date of this transaction
+          by giving written notice of cancellation to {{officeName}}. If for any
+          reason, at any time, the contract is canceled before its completion,
+          and the initial service has been performed, customer agrees to pay the
+          full initial service charge. Upon completion of this agreement
+          treatments will continue at the same frequency until canceled by the
+          customer.
+        </div>
+
+        <div style="clear: both; height: 5px"></div>
+
+        <div class="half left">
+          <h3>Billing Info</h3>
+          {{billingname}}<br />
+          {{billingaddress}}<br />
+          {{billingcity}}, {{billingstate}} {{billingzip}}
+        </div>
+
+        <div class="half right">
+          <h3>Payment Information</h3>
+          <div style="float: left; width: 48%">{{billingname}}</div>
+          <div style="float: right; width: 48%">{{{paymentMethod}}}</div>
+          <br /><br />
+          <i
+            >I authorize {{officeName}} to automatically bill my debit/credit
+            card upon completion of each service.</i
+          >
+        </div>
+        <div style="clear: both; height: 5px"></div>
+      </div>
+      <div style="clear: both; height: 5px"></div>
+      <!-- Included insects -->
+      <div style="width: 100%; border: 0px">
+        <h3 style="background-color: transparent; color: #4C713A; font-weight: 600; font-size: 18px; text-align: left;">Pest we work</h3>
         <div class="targetInsects">
           <div>
             <img
@@ -813,12 +983,6 @@
               style="cursor: pointer"
             />Oriental Roaches
           </div>
-        </div>
-      </div>
-      <div style="clear: both; height: 5px"></div>
-      <div style="width: 100%; border: 0px">
-        <h3>Additional Pests</h3>
-        <div class="targetInsects">
           <div>
             <img
               src="https://d1miv8abus7gau.cloudfront.net/insects/rat.png"
@@ -847,143 +1011,46 @@
             />Carpenter Ants
           </div>
         </div>
-        <div style="clear: both; height: 5px"></div>
-
-        <div style="width: 100%; border: 0px">
-          <h3>Year Round Pest Barriers</h3>
-          <div class="half left" id="yearRound">
-            <img
-              src="http://img.pestroutes.com/resources/printing/contracts/eggCycleGraphic.gif"
-              alt="ecoshieldEggCycle"
-              width="25%"
-              style="float: left; cursor: pointer"
-            />
-            <p style="overflow: hidden; margin-top: 0px">
-              The first treatment around your home is what is called an 'initial
-              flush out'. This special treatment attempts to gain control over
-              existing pest populations.
-              <strong
-                >Your first regular treatment should follow within 30-45 days of
-                the initial treatment to help break up egg cycles.</strong
-              >
-              Insects are immune to treatments while in their egg shells and our
-              products must be active to catch pests as they hatch.
-            </p>
-          </div>
-          <div class="half right">
-            <img
-              src="http://img.pestroutes.com/resources/printing/contracts/insectActivityGraphic.gif"
-              style="width: 90px; float: left; cursor: pointer"
-              alt="ecoshieldPestLevels"
-            />
-            <p style="overflow: hidden; margin-top: 0px">
-              Initially you may see a slight increase in pest activity as pest
-              populations are disrupted. Within a few weeks you should see this
-              activity drastically decline as our products take effect. Over
-              time, these pest levels will continually decrease as regular
-              services are performed. Regular treatments are critical in
-              maintaining protective barriers and preventing infestations from
-              reoccurring. If you see more than the occasional pest around your
-              home, please call {{officePhone}} at any time for a complimentary
-              retreat!
-            </p>
-          </div>
-        </div>
-
-        <div class="clr"></div>
-
-        <div style="width: 100%; border: 0px">
-          <h4 style="margin: 4px 0px">{{description}} Subscription</h4>
-          <div class="calendar">
-            {{#serviceSchedule}}
-            <div>{{{recurringCharge}}}</div>
-            {{/serviceSchedule}}
-          </div>
-        </div>
-
-        <div class="clr"></div>
-
-        <div class="half left">
-          <h4 style="margin: 4px 0px">Initial Service / Warranties</h4>
-          <div class="priceLabel">Initial Quote:</div>
-          <div class="priceValue">${{initialQuote}}</div>
-          <div class="priceLabel">Initial Discount:</div>
-          <div class="priceValue">(${{initialDiscount}})</div>
-
-          <div style="clear: both; height: 5px">&nbsp;</div>
-          {{#addOns}}
-          <div class="priceLabel">{{description}}:</div>
-          <div class="priceValue">${{amount}}</div>
-          {{/addOns}}
-          <div style="clear: both; height: 5px">&nbsp;</div>
-
-          <div class="priceLabel">Sub Total:</div>
-          <div class="priceValue">${{initialSubTotal}}</div>
-          <div class="priceLabel">Tax ({{taxPercent}}):</div>
-          <div class="priceValue">${{initialTax}}</div>
-
-          <div style="clear: both; height: 5px">&nbsp;</div>
-
-          <div class="priceLabel bold">Initial Total:</div>
-          <div class="priceValue bold">${{initialTotal}}</div>
-        </div>
-
-        <div class="half right">
-          <h4 style="margin: 4px 0px">Recurring Services</h4>
-          <div class="priceLabel">Service Charge:</div>
-          <div class="priceValue">${{recurringServiceCharge}}</div>
-
-          <div style="clear: both; height: 5px">&nbsp;</div>
-          {{#addOnsRecurring}}
-          <div class="priceLabel">{{description}}:</div>
-          <div class="priceValue">${{amount}}</div>
-          {{/addOnsRecurring}}
-          <div style="clear: both; height: 5px">&nbsp;</div>
-
-          <div class="priceLabel">Tax ({{taxPercent}}):</div>
-          <div class="priceValue">${{recurringTax}}</div>
-
-          <div class="priceLabel bold">Recurring Total:</div>
-          <div class="priceValue bold">${{recurringTotal}}</div>
-          <div style="clear: both; min-height: 3px; height: 3px"></div>
-          <p style="font-weight: bold; font-style: italic">
-            {{recurringNotes}}
+      </div>
+      <!-- Year round -->
+      <div style="width: 100%; border: 0px">
+        <div class="half left" id="yearRound">
+          <img
+            src="http://img.pestroutes.com/resources/printing/contracts/eggCycleGraphic.gif"
+            alt="ecoshieldEggCycle"
+            width="25%"
+            style="float: left; cursor: pointer"
+          />
+          <p style="overflow: hidden; margin-top: 0px">
+            The first treatment around your home is what is called an 'initial
+            flush out'. This special treatment attempts to gain control over
+            existing pest populations.
+            <strong
+              >Your first regular treatment should follow within 30-45 days of
+              the initial treatment to help break up egg cycles.</strong
+            >
+            Insects are immune to treatments while in their egg shells and our
+            products must be active to catch pests as they hatch.
           </p>
         </div>
-
-        <div class="clr"></div>
-
-        <div class="filledBox">
-          You, the customer, may cancel this transaction anytime prior to
-          midnight of the third business day after the date of this transaction
-          by giving written notice of cancellation to {{officeName}}. If for any
-          reason, at any time, the contract is canceled before its completion,
-          and the initial service has been performed, customer agrees to pay the
-          full initial service charge. Upon completion of this agreement
-          treatments will continue at the same frequency until canceled by the
-          customer.
-        </div>
-
-        <div style="clear: both; height: 5px"></div>
-
-        <div class="half left">
-          <h3>Billing Info</h3>
-          {{billingname}}<br />
-          {{billingaddress}}<br />
-          {{billingcity}}, {{billingstate}} {{billingzip}}
-        </div>
-
         <div class="half right">
-          <h3>Payment Information</h3>
-          <div style="float: left; width: 48%">{{billingname}}</div>
-          <div style="float: right; width: 48%">{{{paymentMethod}}}</div>
-          <br /><br />
-          <i
-            >I authorize {{officeName}} to automatically bill my debit/credit
-            card upon completion of each service.</i
-          >
+          <img
+            src="http://img.pestroutes.com/resources/printing/contracts/insectActivityGraphic.gif"
+            style="width: 90px; float: left; cursor: pointer"
+            alt="ecoshieldPestLevels"
+          />
+          <p style="overflow: hidden; margin-top: 0px">
+            Initially you may see a slight increase in pest activity as pest
+            populations are disrupted. Within a few weeks you should see this
+            activity drastically decline as our products take effect. Over
+            time, these pest levels will continually decrease as regular
+            services are performed. Regular treatments are critical in
+            maintaining protective barriers and preventing infestations from
+            reoccurring. If you see more than the occasional pest around your
+            home, please call {{officePhone}} at any time for a complimentary
+            retreat!
+          </p>
         </div>
-        <div style="clear: both; height: 5px"></div>
       </div>
     </div>
   </body>
