@@ -766,11 +766,16 @@
               text-shadow: none;
               font-weight: 700;
               position: unset;
+              font-size: 18px;
+              padding-bottom: 8px;
             "
           >
             Service Agrement
           </h1>
-          <div class="" style="font-size: 16px; color: #232323">
+          <div
+            class=""
+            style="font-size: 14px; color: #232323; line-height: 1.18rem"
+          >
             {{officeName}}<br />
             {{officeAddress}}<br />
             {{officeCity}}, {{officeState}} {{officeZip}}<br />
@@ -784,7 +789,7 @@
               src="{{officeLogo}}"
               style="height: 60px; width: auto; cursor: pointer"
             />
-            <div class="month" style="font-size: 16px; color: #232323">
+            <div class="month" style="font-size: 14px; color: #232323">
               {{month}} {{year}}
             </div>
           </div>
@@ -792,12 +797,12 @@
       </div>
 
       <div style="clear: both; height: 5px"></div>
-      <div class="half left" style="font-size: 16px; color: #232323">
+      <div class="half left" style="font-size: 14px; color: #232323">
         <h3
           style="
             background-color: transparent;
             color: #4c713a;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             text-align: left;
           "
@@ -818,7 +823,7 @@
           style="
             background-color: transparent;
             color: #4c713a;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             text-align: left;
           "
@@ -827,17 +832,26 @@
         </h3>
         <!-- line -->
         <div
-          style="display: flex; justify-content: space-between; padding: 4px 0"
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            align-items: flex-end;
+          "
         >
-          <span style="font-size: 14px; font-weight: 700">
+          <span style="font-size: 12px; font-weight: 700">
             Customer Name:
           </span>
-          <span style="font-size: 18px">{{customerName}}</span>
+          <span style="font-size: 14px">{{customerName}}</span>
         </div>
         <!-- line -->
         <div style="display: flex; justify-content: space-between">
-          <span style="font-size: 14px; font-weight: 700"> Address: </span>
-          <span style="font-size: 18px; text-align: right; color: #232323"
+          <span
+            style="font-size: 12px; font-weight: 700; align-items: flex-end"
+          >
+            Address:
+          </span>
+          <span style="font-size: 14px; text-align: right; color: #232323"
             >{{address}}<br />
             {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
           >
@@ -849,23 +863,35 @@
               font-weight: 600;
               color: #4c713a;
               text-align: left;
-              font-size: 18px;
+              font-size: 16px;
               padding: 2px 0;
             "
           >
             Customer Information
           </h4>
           <!-- line -->
-          <div style="display: flex; justify-content: space-between">
-            <span style="font-size: 14px; font-weight: 700"> Email: </span>
-            <span style="font-size: 18px; text-align: right; color: #232323"
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+            "
+          >
+            <span style="font-size: 12px; font-weight: 700"> Email: </span>
+            <span style="font-size: 14px; text-align: right; color: #232323"
               >{{email}}
             </span>
           </div>
           <!-- line -->
-          <div style="display: flex; justify-content: space-between">
-            <span style="font-size: 14px; font-weight: 700"> Phones: </span>
-            <span style="font-size: 18px; text-align: right; color: #232323"
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding-top: 4px;
+            "
+          >
+            <span style="font-size: 12px; font-weight: 700"> Phones: </span>
+            <span style="font-size: 14px; text-align: right; color: #232323"
               >{{phone1}} <br />
               {{phone2}}
             </span>
@@ -876,12 +902,12 @@
       <div style="clear: both; height: 5px"></div>
       <div class="clr"></div>
 
-      <div style="width: 100%; border: 0px">
+      <div style="width: 100%; border: 0px; padding-bottom: 8px">
         <h4
           style="
             margin: 4px 0px;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 18px;
             background-color: transparent;
             text-align: left;
             color: #4c713a;
@@ -890,14 +916,28 @@
           Service and Payment Schedule Subscription
         </h4>
         <div
-          class="calendar"
-          style="font-size: 18px; padding: 12px; background: white"
+          class="calendarNew"
+          style="
+            font-size: 14px;
+            background: white;
+            border: solid 1px #80b46a;
+            display: flex;
+          "
         >
-          {{#serviceSchedule}} {{/serviceSchedule}}
+          {{#serviceSchedule}}
+          <div style="border-right: 1px solid #80b46a; border-left: 1px solid #80b46a;">
+            <span class="" style="font-size: 12px; display: block; padding: 6px;background: #ddebd7; text-align: center;">{{month}} {{year}}</span>
+            <span style="display: block; font-size: 12px; padding: 6px; border-top: 1px solid #80b46a; text-align: center;">{{{recurringCharge}}}</span>
+          </div>
+          <div style="border-right: 1px solid #80b46a; border-left: 1px solid #80b46a;">
+            <span class="" style="font-size: 12px; display: block; padding: 6px;background: #ddebd7; text-align: center;">{{month}} {{year}}</span>
+            <span style="display: block; font-size: 12px; padding: 6px; border-top: 1px solid #80b46a; text-align: center;">{{{recurringCharge}}}</span>
+          </div>
+          {{/serviceSchedule}}
         </div>
       </div>
       <!-- Services -->
-      <div style="width: 100%; border: 0px">
+      <div style="width: 100%; border: 0px; padding-bottom: 8px">
         <div class="clr"></div>
 
         <div class="">
@@ -907,35 +947,52 @@
               background-color: transparent;
               color: #4c713a;
               font-weight: 600;
-              font-size: 20px;
+              font-size: 18px;
               text-align: left;
             "
           >
             Included Bundle Services
           </h3>
-          <!-- titles -->
-          <div class="titles" style="display: flex">
-            <span style="font-weight: 700; font-size: 14px; margin-right: auto"
-              >Service name</span
-            >
-            <span style="font-weight: 700; font-size: 14px; margin: 0 5%"
-              >Initial Discount</span
-            >
-            <span style="font-weight: 700; font-size: 14px; margin: 0 5%"
-              >Initial Price</span
-            >
-            <span style="font-weight: 700; font-size: 14px; margin: 0 5%"
-              >Recurring Price</span
-            >
-          </div>
+
           <!-- services -->
-          <div class="services" style="background: white; padding: 4px">
+          <div
+            class="services"
+            style="background: white; padding: 8px; border: solid 1px #80b46a"
+          >
+            <!-- titles -->
+            <div
+              class="titles"
+              style="
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 5%;
+                align-items: center;
+              "
+            >
+              <span style="font-weight: 700; font-size: 12px"
+                >Service name</span
+              >
+              <span
+                style="font-weight: 700; font-size: 12px; text-align: center"
+                >Initial Price</span
+              >
+              <span
+                style="font-weight: 700; font-size: 12px; text-align: center"
+                >Recurring Price</span
+              >
+            </div>
             {{#bundleServices}}
-            <div style="display: flex">
-              <div style="margin-right: auto">{{description}}</div>
-              <div class="" style="margin: 0 5%">(${{initialDiscount}})</div>
-              <div class="" style="margin: 0 5%">${{initialQuote}}</div>
-              <div class="" style="margin: 0 5%">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 5%;
+                align-items: center;
+              "
+            >
+              <div style="">{{description}}</div>
+              <div class="" style="text-align: center">${{initialQuote}}</div>
+              <div class="" style="text-align: center">
                 ${{recurringServiceCharge}}
               </div>
             </div>
@@ -944,37 +1001,89 @@
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
-      <!-- Terms & Conditions -->
-      <div class="half left" style="font-size: 16px">
-        <h3
-          style="
-            background-color: transparent;
-            font-size: 18px;
-            color: #4c713a;
-            text-align: left;
-            font-weight: 600;
-          "
-        >
-          Terms & Conditions
-        </h3>
-        <p>{{{contractTerms}}}</p>
-        <p class="" style="font-size: 14px">
-          You, the customer, may cancel this transaction anytime prior to
-          midnight of the third business day after the date of this transaction
-          by giving written notice of cancellation to {{officeName}}. If for any
-          reason, at any time, the contract is canceled before its completion,
-          and the initial service has been performed, customer agrees to pay the
-          full initial service charge. Upon completion of this agreement
-          treatments will continue at the same frequency until canceled by the
-          customer.
-        </p>
+      <div class="half left">
+        <!-- payment info -->
+        <div>
+          <h3
+            style="
+              background-color: transparent;
+              font-size: 16px;
+              color: #4c713a;
+              text-align: left;
+              font-weight: 600;
+            "
+          >
+            Payment Information
+          </h3>
+          <div
+            style="
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+              margin-top: 12px;
+            "
+          >
+            <span style="font-weight: 700">Name:</span>
+            <span>{{billingname}}</span>
+          </div>
+          <div
+            style="
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <span style="font-weight: 700">Payment Method:</span>
+            <span>{{paymentMethod}}</span>
+          </div>
+          <p>
+            <i style="font-size: 12px"
+              >I authorize {{officeName}} to automatically bill my debit/credit
+              card upon completion of each service.</i
+            >
+          </p>
+        </div>
+
+        <!-- Billing Info -->
+        <div class="">
+          <h3
+            style="
+              background-color: transparent;
+              font-size: 16px;
+              color: #4c713a;
+              text-align: left;
+              font-weight: 600;
+            "
+          >
+            Billing Info
+          </h3>
+          <div
+            style="
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <span style="font-weight: 700">Billing Name:</span>
+            <span>{{billingname}}</span>
+          </div>
+          <div style="font-size: 12px; display: flex">
+            <span style="font-weight: 700; margin-right: auto"
+              >Billing Adress:</span
+            >
+            <span>
+              {{billingaddress}}<br />
+              {{billingcity}}, {{billingstate}} {{billingzip}}</span
+            >
+          </div>
+        </div>
       </div>
       <!-- Service Charges -->
       <div class="half right">
         <h3
           style="
             background-color: transparent;
-            font-size: 18px;
+            font-size: 16px;
             color: #4c713a;
             text-align: right;
             font-weight: 600;
@@ -998,7 +1107,7 @@
         >
           <div
             class="priceLabel"
-            style="width: auto; font-size: 14px; font-weight: 400"
+            style="width: auto; font-size: 12px; font-weight: 400"
           >
             Contract SubTotal:
           </div>
@@ -1007,7 +1116,7 @@
             style="
               width: auto;
               text-align: right;
-              font-size: 14px;
+              font-size: 12px;
               font-weight: 700;
             "
           >
@@ -1015,7 +1124,7 @@
           </div>
           <div
             class="priceLabel"
-            style="width: auto; font-size: 14px; font-weight: 400"
+            style="width: auto; font-size: 12px; font-weight: 400"
           >
             Total Add-ons:
           </div>
@@ -1024,7 +1133,7 @@
             style="
               width: auto;
               text-align: right;
-              font-size: 14px;
+              font-size: 12px;
               font-weight: 700;
             "
           >
@@ -1032,7 +1141,7 @@
           </div>
           <div
             class="priceLabel"
-            style="width: auto; font-size: 14px; font-weight: 400"
+            style="width: auto; font-size: 12px; font-weight: 400"
           >
             Total Discounts:
           </div>
@@ -1041,7 +1150,7 @@
             style="
               width: auto;
               text-align: right;
-              font-size: 14px;
+              font-size: 12px;
               font-weight: 700;
             "
           >
@@ -1049,7 +1158,7 @@
           </div>
           <div
             class="priceLabel"
-            style="width: auto; font-size: 14px; font-weight: 400"
+            style="width: auto; font-size: 12px; font-weight: 400"
           >
             Tax ({{taxPercent}}):
           </div>
@@ -1058,7 +1167,7 @@
             style="
               width: auto;
               text-align: right;
-              font-size: 14px;
+              font-size: 12px;
               font-weight: 700;
             "
           >
@@ -1066,7 +1175,7 @@
           </div>
           <div
             class="priceLabel"
-            style="width: auto; font-size: 14px; font-weight: 400"
+            style="width: auto; font-size: 12px; font-weight: 400"
           >
             Contract Total:
           </div>
@@ -1075,7 +1184,7 @@
             style="
               width: auto;
               text-align: right;
-              font-size: 14px;
+              font-size: 12px;
               font-weight: 700;
             "
           >
@@ -1084,67 +1193,32 @@
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
-
-      <!-- payment info -->
-      <div class="half left">
+      <!-- Terms & Conditions -->
+      <div class="" style="font-size: 14px; margin-top: 8px; padding-top: 4px; border-top: 2px solid #80b46a;">
         <h3
           style="
             background-color: transparent;
-            font-size: 18px;
+            font-size: 16px;
             color: #4c713a;
             text-align: left;
             font-weight: 600;
           "
         >
-          Payment Information
+          Terms & Conditions
         </h3>
-        <div
-          style="font-size: 14px; display: flex; justify-content: space-between"
-        >
-          <span style="font-weight: 700">Name:</span>
-          <span>{{billingname}}</span>
-        </div>
-        <div
-          style="font-size: 14px; display: flex; justify-content: space-between"
-        >
-          <span style="font-weight: 700">Payment Method:</span>
-          <span>{{paymentMethod}}</span>
-        </div>
-        <p>
-          <i style="font-size: 14px"
-            >I authorize {{officeName}} to automatically bill my debit/credit
-            card upon completion of each service.</i
-          >
+        <p style="margin: 8px">{{{contractTerms}}}</p>
+        <p style="margin: 8px; font-size: 12px">
+          You, the customer, may cancel this transaction anytime prior to
+          midnight of the third business day after the date of this transaction
+          by giving written notice of cancellation to {{officeName}}. If for any
+          reason, at any time, the contract is canceled before its completion,
+          and the initial service has been performed, customer agrees to pay the
+          full initial service charge. Upon completion of this agreement
+          treatments will continue at the same frequency until canceled by the
+          customer.
         </p>
       </div>
-
-      <!-- Billing Info -->
-      <div class="half right">
-        <h3
-          style="
-            background-color: transparent;
-            font-size: 18px;
-            color: #4c713a;
-            text-align: left;
-            font-weight: 600;
-          "
-        >
-          Billing Info
-        </h3>
-        <div
-          style="font-size: 14px; display: flex; justify-content: space-between"
-        >
-          <span style="font-weight: 700">Billing Name:</span>
-          <span>{{billingname}}</span>
-        </div>
-        <div
-          style="font-size: 14px; display: flex; justify-content: space-between"
-        >
-          <span style="font-weight: 700">Billing Adress:</span>
-          <span>{{billingaddress}}</span> <br />
-          <span>{{billingcity}}, {{billingstate}} {{billingzip}}</span>
-        </div>
-      </div>
+      <!-- ---------- -->
       <div style="clear: both; height: 5px"></div>
       <!-- Included insects -->
       <div style="width: 100%; border: 0px">
@@ -1153,14 +1227,14 @@
             background-color: transparent;
             color: #4c713a;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             text-align: left;
           "
         >
           Pest we work
         </h3>
         <div class="targetInsects">
-          <div style="font-size: 14px;">
+          <div style="font-size: 12px">
             <img
               src="https://d1miv8abus7gau.cloudfront.net/insects/cockroach.png"
               style="cursor: pointer"
@@ -1262,48 +1336,6 @@
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
-
-      <!-- Year round -->
-      <div style="width: 100%; border: 0px">
-        <div class="half left" id="yearRound">
-          <img
-            src="http://img.pestroutes.com/resources/printing/contracts/eggCycleGraphic.gif"
-            alt="ecoshieldEggCycle"
-            width="25%"
-            style="float: left; cursor: pointer"
-          />
-          <p style="overflow: hidden; margin-top: 0px">
-            The first treatment around your home is what is called an 'initial
-            flush out'. This special treatment attempts to gain control over
-            existing pest populations.
-            <strong
-              >Your first regular treatment should follow within 30-45 days of
-              the initial treatment to help break up egg cycles.</strong
-            >
-            Insects are immune to treatments while in their egg shells and our
-            products must be active to catch pests as they hatch.
-          </p>
-        </div>
-        <div class="half right">
-          <img
-            src="http://img.pestroutes.com/resources/printing/contracts/insectActivityGraphic.gif"
-            style="width: 90px; float: left; cursor: pointer"
-            alt="ecoshieldPestLevels"
-          />
-          <p style="overflow: hidden; margin-top: 0px">
-            Initially you may see a slight increase in pest activity as pest
-            populations are disrupted. Within a few weeks you should see this
-            activity drastically decline as our products take effect. Over time,
-            these pest levels will continually decrease as regular services are
-            performed. Regular treatments are critical in maintaining protective
-            barriers and preventing infestations from reoccurring. If you see
-            more than the occasional pest around your home, please call
-            {{officePhone}} at any time for a complimentary retreat!
-          </p>
-        </div>
-      </div>
-      <div style="clear: both; height: 5px"></div>
-
     </div>
   </body>
 </html>
