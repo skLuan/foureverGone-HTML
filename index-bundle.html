@@ -774,7 +774,7 @@
           </h1>
           <div
             class=""
-            style="font-size: 14px; color: #232323; line-height: 1.18rem"
+            style="font-size: 12px; color: #232323; line-height: 1.18rem; text-align: left;"
           >
             {{officeName}}<br />
             {{officeAddress}}<br />
@@ -790,7 +790,7 @@
               style="height: 60px; width: auto; cursor: pointer"
             />
             <div class="month" style="font-size: 14px; color: #232323">
-              {{month}} {{year}}
+              {{CurrentDateDisplay}}
             </div>
           </div>
         </div>
@@ -802,7 +802,7 @@
           style="
             background-color: transparent;
             color: #4c713a;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             text-align: left;
           "
@@ -823,7 +823,7 @@
           style="
             background-color: transparent;
             color: #4c713a;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             text-align: left;
           "
@@ -852,8 +852,7 @@
             Address:
           </span>
           <span style="font-size: 14px; text-align: right; color: #232323"
-            >{{address}}<br />
-            {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
+            >{{address}}, {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
           >
         </div>
         <div class="">
@@ -863,7 +862,7 @@
               font-weight: 600;
               color: #4c713a;
               text-align: left;
-              font-size: 16px;
+              font-size: 14px;
               padding: 2px 0;
             "
           >
@@ -901,7 +900,96 @@
 
       <div style="clear: both; height: 5px"></div>
       <div class="clr"></div>
+      <!-- Services -->
+      <div style="width: 100%; border: 0px; padding-bottom: 8px">
+        <div class="clr"></div>
 
+        <div class="">
+          <h3
+            style="
+              margin: 4px 0px;
+              background-color: transparent;
+              color: #4c713a;
+              font-weight: 600;
+              font-size: 16px;
+              text-align: left;
+            "
+          >
+            Included Bundle Services
+          </h3>
+
+          <!-- services -->
+          <div
+            class="full"
+            style="padding: 4px; background: white; border: 1px solid #80b46a"
+          >
+            {{#bundleServices}}
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr style="height: 2em">
+                  <th style="text-align: left; width: 50%">Service</th>
+                  <th>Initial Price</th>
+                  <th style="text-align: right; width: 25%">Recurring Price</th>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clr"></div>
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr style="height: 2em">
+                  <td style="width: 50%">{{description}}</td>
+                  <td style="text-align: center; width: 25%">
+                    ${{initialQuote}}
+                  </td>
+                  <td style="text-align: right; width: 25%">
+                    ${{recurringServiceCharge}}
+                  </td>
+                </tr>
+                <tr style="height: 2em">
+                  <td colspan="3">{{frequencyDescription}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clr"></div>
+            <div class="clr"></div>
+            {{#combinedAddOns}}
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr>
+                  <td style="width: 50%; padding-left: 60px">
+                    {{description}}
+                  </td>
+                  <td style="text-align: center; width: 25%">
+                    ${{initialAmount}}
+                  </td>
+                  <td style="text-align: right; width: 25%">
+                    ${{recurringAmount}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {{/combinedAddOns}}
+            <div class="clr"></div>
+            {{#combinedDiscounts}}
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr>
+                  <td style="width: 50%; padding-left: 60px">{{name}}</td>
+                  <td style="text-align: center; width: 25%">
+                    ${{initialAmount}}
+                  </td>
+                  <td style="text-align: right; width: 25%">
+                    ${{recurringAmount}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {{/combinedDiscounts}}
+            <div class="clr"></div>
+            {{/bundleServices}}
+          </div>
+        </div>
+      </div>
       <div style="width: 100%; border: 0px; padding-bottom: 8px">
         <h4
           style="
@@ -925,79 +1013,63 @@
           "
         >
           {{#serviceSchedule}}
-          <div style="border-right: 1px solid #80b46a; border-left: 1px solid #80b46a;">
-            <span class="" style="font-size: 12px; display: block; padding: 6px;background: #ddebd7; text-align: center;">{{month}} {{year}}</span>
-            <span style="display: block; font-size: 12px; padding: 6px; border-top: 1px solid #80b46a; text-align: center;">{{{recurringCharge}}}</span>
-          </div>
-          <div style="border-right: 1px solid #80b46a; border-left: 1px solid #80b46a;">
-            <span class="" style="font-size: 12px; display: block; padding: 6px;background: #ddebd7; text-align: center;">{{month}} {{year}}</span>
-            <span style="display: block; font-size: 12px; padding: 6px; border-top: 1px solid #80b46a; text-align: center;">{{{recurringCharge}}}</span>
-          </div>
-          {{/serviceSchedule}}
-        </div>
-      </div>
-      <!-- Services -->
-      <div style="width: 100%; border: 0px; padding-bottom: 8px">
-        <div class="clr"></div>
-
-        <div class="">
-          <h3
+          <div
             style="
-              margin: 4px 0px;
-              background-color: transparent;
-              color: #4c713a;
-              font-weight: 600;
-              font-size: 18px;
-              text-align: left;
+              border-right: 1px solid #80b46a;
+              border-left: 1px solid #80b46a;
             "
           >
-            Included Bundle Services
-          </h3>
-
-          <!-- services -->
-          <div
-            class="services"
-            style="background: white; padding: 8px; border: solid 1px #80b46a"
-          >
-            <!-- titles -->
-            <div
-              class="titles"
+            <span
+              class=""
               style="
-                display: grid;
-                grid-template-columns: 2fr 1fr 1fr;
-                gap: 5%;
-                align-items: center;
+                font-size: 12px;
+                display: block;
+                padding: 6px;
+                background: #ddebd7;
+                text-align: center;
               "
+              >{{month}} {{year}}</span
             >
-              <span style="font-weight: 700; font-size: 12px"
-                >Service name</span
-              >
-              <span
-                style="font-weight: 700; font-size: 12px; text-align: center"
-                >Initial Price</span
-              >
-              <span
-                style="font-weight: 700; font-size: 12px; text-align: center"
-                >Recurring Price</span
-              >
-            </div>
-            {{#bundleServices}}
-            <div
+            <span
               style="
-                display: grid;
-                grid-template-columns: 2fr 1fr 1fr;
-                gap: 5%;
-                align-items: center;
+                display: block;
+                font-size: 12px;
+                padding: 6px;
+                border-top: 1px solid #80b46a;
+                text-align: center;
               "
+              >{{{recurringCharge}}}</span
             >
-              <div style="">{{description}}</div>
-              <div class="" style="text-align: center">${{initialQuote}}</div>
-              <div class="" style="text-align: center">
-                ${{recurringServiceCharge}}
-              </div>
-            </div>
-            {{/bundleServices}}
           </div>
+          <div
+            style="
+              border-right: 1px solid #80b46a;
+              border-left: 1px solid #80b46a;
+            "
+          >
+            <span
+              class=""
+              style="
+                font-size: 12px;
+                display: block;
+                padding: 6px;
+                background: #ddebd7;
+                text-align: center;
+              "
+              >{{month}} {{year}}</span
+            >
+            <span
+              style="
+                display: block;
+                font-size: 12px;
+                padding: 6px;
+                border-top: 1px solid #80b46a;
+                text-align: center;
+              "
+              >{{{recurringCharge}}}</span
+            >
+          </div>
+          {{/serviceSchedule}}
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
@@ -1072,8 +1144,7 @@
               >Billing Adress:</span
             >
             <span>
-              {{billingaddress}}<br />
-              {{billingcity}}, {{billingstate}} {{billingzip}}</span
+              {{billingaddress}}, {{billingcity}}, {{billingstate}} {{billingzip}}</span
             >
           </div>
         </div>
@@ -1194,7 +1265,15 @@
       </div>
       <div style="clear: both; height: 5px"></div>
       <!-- Terms & Conditions -->
-      <div class="" style="font-size: 14px; margin-top: 8px; padding-top: 4px; border-top: 2px solid #80b46a;">
+      <div
+        class=""
+        style="
+          font-size: 14px;
+          margin-top: 8px;
+          padding-top: 4px;
+          border-top: 2px solid #80b46a;
+        "
+      >
         <h3
           style="
             background-color: transparent;
@@ -1206,7 +1285,6 @@
         >
           Terms & Conditions
         </h3>
-        <p style="margin: 8px">{{{contractTerms}}}</p>
         <p style="margin: 8px; font-size: 12px">
           You, the customer, may cancel this transaction anytime prior to
           midnight of the third business day after the date of this transaction
@@ -1216,7 +1294,9 @@
           full initial service charge. Upon completion of this agreement
           treatments will continue at the same frequency until canceled by the
           customer.
-        </p>
+        </p>  
+        <p style="margin: 8px">{{{contractTerms}}}</p>
+        <p style="margin: 8px; font-size: 10px;">{{{paymentsLegal}}}</p>
       </div>
       <!-- ---------- -->
       <div style="clear: both; height: 5px"></div>

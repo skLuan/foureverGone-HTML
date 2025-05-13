@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Desktop -->
+    <style>
+      .pointeGraphics {
+        margin-right: 5px;
+        width: 120px;
+        height: 100px;
+      }
+
+      .terms {
+        display: none;
+      }
+
+      .full {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .half {
+        width: 49%;
+        box-sizing: border-box;
+      }
+
+      .oneThird {
+        width: 33%;
+        box-sizing: border-box;
+      }
+
+      .oneQuarter {
+        width: 25%;
+        box-sizing: border-box;
+      }
+
+      .twoThirds {
+        width: 66%;
+        box-sizing: border-box;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: right;
+      }
+
+      .clr {
+        clear: both;
+      }
+
+      .contract .priceLabel {
+        float: left;
+        width: 45%;
+      }
+
+      .contract .priceValue {
+        float: right;
+        width: 45%;
+        text-align: right;
+      }
+
+      .optionalServices li .optionalPrice,
+      .optionalServices li div {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+
+      .optionalServices li .optionalService {
+        position: static;
+        float: left;
+        text-align: left;
+      }
+
+      .optionalServices li img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+
+      .optionalServices {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .optionalServices li {
+        width: 100%;
+        margin-left: 0%;
+        float: left;
+        line-height: 25px;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        position: relative;
+      }
+
+      .ecoshieldPestLevels div {
+        width: 75%;
+        left: 25%;
+        top: 0px;
+        z-index: 11;
+        position: absolute;
+      }
+
+      .ecoshieldPestLevels img {
+        width: 90%;
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin-top: 70px;
+      }
+
+      .ecoshieldPestLevels {
+        height: 165px;
+        position: relative;
+      }
+
+      .contractGuarantee {
+        width: 70%;
+        max-width: 300px;
+      }
+
+      .contract {
+        margin-top: 0px;
+        font-family: Arial;
+        font-size: 10pt;
+      }
+
+      .contract .thirdLeft {
+        width: 32%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 11px;
+        min-width: 300px;
+      }
+
+      .contract .thirdRight {
+        width: 59%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 11px;
+        min-width: 300px;
+      }
+
+      .contract .halfLeft {
+        width: 47%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 11px;
+        min-width: 300px;
+      }
+
+      .contract .halfRight {
+        width: 47%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 11px;
+        min-width: 300px;
+      }
+
+      .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+
+      .extraUL div span {
+        font-weight: bold;
+      }
+
+      .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 45%;
+        margin-right: 3%;
+        float: left;
+        /* 		display: inline-table; */
+
+        font-size: 9px;
+      }
+
+      .miniLogo {
+        width: 100%;
+        position: relative;
+        height: 80%;
+      }
+
+      .miniLogo .miniText {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        font-size: 20px;
+      }
+
+      .miniLogo img {
+        width: 200px;
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+
+      .contract .logoDiv {
+        position: absolute;
+        float: left;
+        top: 80px;
+        left: 10px;
+        font-size: 16px;
+        height: 100%;
+      }
+
+      .contract .officeInfo {
+        text-align: right;
+        font-size: 11px;
+        font-weight: bold;
+        float: right;
+        margin-top: 2px;
+        right: 5px;
+        width: 50%;
+        line-height: 15px;
+      }
+
+      .contract .header h1 {
+        text-align: center;
+        margin: 3px 0px;
+        position: absolute;
+        top: 10px;
+        padding: 0px;
+        width: 100%;
+        font-size: 13pt;
+        text-transform: uppercase;
+        color: #343434;
+        clear: both;
+        text-shadow: 1px 1px #898989;
+      }
+
+      .contract .header {
+        color: #343434;
+        width: 96%;
+        padding: 5px 0px;
+        position: relative;
+        top: 0px;
+        background-color: #aa0000;
+        height: 60px;
+        padding: 5px 2%;
+        border-radius: 10px;
+      }
+
+      .contract .calendar {
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+      }
+
+      .contract .calendar div .month {
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        font-size: 11px;
+        line-height: 16px;
+        height: 16px;
+        background-color: #006633;
+        color: #fff;
+        margin: 0px 0px 2px 0px;
+      }
+
+      .contract .calendar div {
+        width: 15%;
+        margin: 2px 2px;
+        height: 34px;
+        line-height: 16px;
+        float: left;
+        border: 1px solid #898989;
+        padding: 0px;
+        background-color: #fff;
+      }
+
+      .contract .targetInsects div img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+
+      .contract .targetInsects div {
+        list-style: none;
+        width: 24%;
+        float: left;
+        font-size: 9px;
+        line-height: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contract .targetInsects {
+        clear: both;
+      }
+
+      .contract .moxieLineRule div {
+        height: 4px;
+        background-color: #aa0000;
+        width: 100%;
+      }
+
+      .contract .moxieLineRule {
+        width: 100%;
+        border: 1px solid green;
+        padding: 1px 0px;
+        border-left: none;
+        border-right: none;
+        margin: 6px 0px;
+      }
+
+      .contract .pointeHeader {
+        color: #006633;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .contract h3,
+      .contract h4 {
+        width: 100%;
+        text-align: left;
+        padding: 0px;
+        color: #fff;
+        background-color: #006633;
+        text-align: center;
+        height: 18px;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 3px 0px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+
+      .contract .filledBox {
+        background-color: #006633;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+        padding: 4px 1%;
+        color: #fff;
+        font-size: 9px;
+        text-align: justify;
+      }
+
+      .contract .borderBox {
+        border: 1px solid #5a9364;
+        padding: 2px 1% 2px 1%;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+        line-height: 16px;
+      }
+
+      .contract .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+
+      .contract .extraUL div span {
+        font-weight: bold;
+      }
+
+      .contract .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 30%;
+        margin-right: 3%;
+        float: left;
+      }
+
+      .contract .val1 {
+        width: 35%;
+        text-align: right;
+        float: right;
+        height: 16px;
+        line-height: 16px;
+        font-size: 11px;
+      }
+
+      .contract .lbl1 {
+        width: 60%;
+        clear: both;
+        height: 16px;
+        line-height: 16px;
+        font-weight: bold;
+        float: left;
+        font-size: 11px;
+      }
+
+      .contract div {
+        font-size: 10px;
+      }
+    </style>
+
+    <!-- Mobile -->
+    <!-- <style>
+      .goldstar {
+        display: none;
+      }
+      .contract .priceLabel {
+        float: left;
+        width: 45%;
+        margin-left: 3%;
+      }
+      .contract .priceValue {
+        float: right;
+        width: 45%;
+        text-align: right;
+      }
+      .contract .full {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .half {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .oneThird {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .oneQuarter {
+        width: 50%;
+        box-sizing: border-box;
+      }
+      .contract .twoThirds {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .contract .left {
+        float: left;
+      }
+      .contract .right {
+        float: right;
+      }
+      .contract .clr {
+        clear: both;
+      }
+      div {
+        box-sizing: border-box;
+      }
+      .optionalServices li .optionalService {
+        float: left;
+        text-align: left;
+      }
+      .optionalServices li .optionalPrice {
+        float: right;
+        text-align: right;
+      }
+      .optionalServices li img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+      .optionalServices {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .optionalServices li {
+        width: 44%;
+        margin-left: 15px;
+        min-width: 320px;
+        float: left;
+        list-style-type: none;
+      }
+      .ecoshieldPestLevels img {
+        width: 95%;
+      }
+      .ecoshieldPestLevels div {
+        width: 100%;
+        clear: both;
+        float: left;
+        margin-bottom: 10px;
+      }
+      .ecoshieldPestLevels {
+        position: relative;
+      }
+      .contract {
+        margin-top: 0px;
+        font-family: Arial;
+        font-size: 17px;
+        position: relative;
+        background-color: #fff;
+      }
+      .contract .thirdLeft {
+        width: 100%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+      .contract .thirdRight {
+        width: 100%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 17px;
+      }
+      .contract .halfLeft {
+        width: 100%;
+        float: left;
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+      .contract .halfRight {
+        width: 100%;
+        margin-bottom: 6px;
+        float: right;
+        font-size: 17px;
+      }
+      .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .extraUL div span {
+        font-weight: bold;
+      }
+      .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 45%;
+        margin-right: 3%;
+        float: left;
+        font-size: 17px;
+      }
+      .miniLogo {
+        width: 100%;
+        position: relative;
+      }
+      .miniLogo .miniText {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        font-size: 24px;
+      }
+      .miniLogo img {
+        width: 50px;
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+      .contract .logoDiv {
+        font-size: 20px;
+        float: left;
+        clear: both;
+        width: 100%;
+        display: none;
+      }
+      .contractGuarantee {
+        width: 70%;
+        max-width: 250px;
+      }
+      .contract .officeInfo {
+        font-size: 17px;
+        font-weight: normal;
+        float: left;
+        clear: both;
+        width: 100%;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .contract .header h1 {
+        text-align: center;
+        margin: 3px 0px;
+        padding: 0px;
+        width: 100%;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: green;
+        clear: both;
+        text-shadow: 1px 1px #898989;
+        position: absolute;
+        top: 10px;
+      }
+      .contract .header {
+        color: #232323;
+        width: 96%;
+        padding: 5px 0px;
+        position: relative;
+        top: 0px;
+        height: 110px;
+        padding: 5px 2%;
+        border-radius: 10px;
+      }
+      .contract .calendar {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+      }
+      .contract .calendar div .month {
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        font-size: 17px;
+        height: 22px;
+        background-color: green;
+        color: #fff;
+        margin: 0px 0px 2px 0px;
+      }
+      .contract .calendar div {
+        min-width: 16%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 2px 2px;
+        height: 50px;
+        border: 1px solid #898989;
+        padding: 0px;
+        background-color: #fff;
+      }
+      .contract .targetInsects div img {
+        height: 20px;
+        width: 30px;
+        float: left;
+      }
+      .contract .targetInsects div {
+        list-style: none;
+        width: 22%;
+        margin-left: 2%;
+        min-width: 150px;
+        float: left;
+        font-size: 15px;
+        position: relative;
+        overflow: hidden;
+      }
+      .contract .targetInsects {
+        clear: both;
+        margin: 0px;
+        padding: 0px;
+      }
+      .contract .moxieLineRule div {
+        height: 4px;
+        background-color: green;
+        width: 100%;
+      }
+      .contract .moxieLineRule {
+        width: 100%;
+        border: 1px solid green;
+        padding: 1px 0px;
+        border-left: none;
+        border-right: none;
+        margin: 6px 0px;
+      }
+      .contract h3,
+      .contract h4 {
+        width: 100%;
+        color: #fff;
+        background-color: green;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        margin: 3px 0px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      .contract .filledBox {
+        background-color: green;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+        padding: 4px 1%;
+        color: #fff;
+        font-size: 15px;
+        text-align: justify;
+      }
+      .contract .borderBox {
+        border: 1px solid #5a9364;
+        padding: 2px 1% 2px 1%;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        margin: 0px;
+      }
+      .contract .extraUL {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      .contract .extraUL div span {
+        font-weight: bold;
+      }
+      .contract .extraUL div {
+        margin: 0px;
+        list-style: none;
+        width: 30%;
+        margin-right: 3%;
+        float: left;
+      }
+      .contract .val1 {
+        width: 40%;
+        text-align: right;
+        float: right;
+        height: 20px;
+        font-size: 17px;
+      }
+      .contract .lbl1 {
+        width: 55%;
+        clear: both;
+        height: 20px;
+        font-weight: bold;
+        float: left;
+        font-size: 17px;
+      }
+      .contract div {
+        font-size: 15px;
+      }
+      span.salesRepName {
+        font-size: 17px;
+        text-align: center;
+      }
+      .miniText span {
+        font-size: 24px;
+      }
+      #yearRound {
+        font-size: 15px;
+        margin: 0px;
+        padding: 0px;
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <div
+      class="contract"
+      style="
+        padding: 24px;
+        background: linear-gradient(
+            215deg,
+            rgba(255, 255, 255, 0.15) 31.27%,
+            rgba(128, 180, 106, 0.15) 90.91%
+          ),
+          #fff;
+      "
+    >
+      <div
+        class="header"
+        style="
+          background-color: transparent;
+          height: auto;
+          display: flex;
+          justify-content: space-between;
+          padding: 0;
+          margin-bottom: 24px;
+        "
+      >
+        <div class="info">
+          <h1
+            style="
+              text-align: left;
+              color: #4c713a;
+              text-shadow: none;
+              font-weight: 700;
+              position: unset;
+              font-size: 18px;
+              padding-bottom: 8px;
+            "
+          >
+            Service Agrement
+          </h1>
+          <div
+            class=""
+            style="font-size: 12px; color: #232323; line-height: 1.18rem; text-align: left;"
+          >
+            {{officeName}}<br />
+            {{officeAddress}}<br />
+            {{officeCity}}, {{officeState}} {{officeZip}}<br />
+            {{officePhone}} | {{officeEmail}}<br />
+            License #: {{officeLicenseNumber}}
+          </div>
+        </div>
+        <div class="">
+          <div class="">
+            <img
+              src="{{officeLogo}}"
+              style="height: 60px; width: auto; cursor: pointer"
+            />
+            <div class="month" style="font-size: 14px; color: #232323">
+              {{CurrentDateDisplay}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="clear: both; height: 5px"></div>
+      <div class="half left" style="font-size: 14px; color: #232323">
+        <h3
+          style="
+            background-color: transparent;
+            color: #4c713a;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: left;
+          "
+        >
+          About the Service
+        </h3>
+        <p>{{description}}</p>
+        <p>
+          {{notes}}
+          <br />
+          {{#addOns}} {{/addOns}}
+          <br />
+          {{#addOnsRecurring}} {{/addOnsRecurring}}
+        </p>
+      </div>
+      <div class="half right">
+        <h3
+          style="
+            background-color: transparent;
+            color: #4c713a;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: left;
+          "
+        >
+          Service Address
+        </h3>
+        <!-- line -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            align-items: flex-end;
+          "
+        >
+          <span style="font-size: 12px; font-weight: 700">
+            Customer Name:
+          </span>
+          <span style="font-size: 14px">{{customerName}}</span>
+        </div>
+        <!-- line -->
+        <div style="display: flex; justify-content: space-between">
+          <span
+            style="font-size: 12px; font-weight: 700; align-items: flex-end"
+          >
+            Address:
+          </span>
+          <span style="font-size: 14px; text-align: right; color: #232323"
+            >{{address}}, {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
+          >
+        </div>
+        <div class="">
+          <h4
+            style="
+              background-color: transparent;
+              font-weight: 600;
+              color: #4c713a;
+              text-align: left;
+              font-size: 14px;
+              padding: 2px 0;
+            "
+          >
+            Customer Information
+          </h4>
+          <!-- line -->
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+            "
+          >
+            <span style="font-size: 12px; font-weight: 700"> Email: </span>
+            <span style="font-size: 14px; text-align: right; color: #232323"
+              >{{email}}
+            </span>
+          </div>
+          <!-- line -->
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding-top: 4px;
+            "
+          >
+            <span style="font-size: 12px; font-weight: 700"> Phones: </span>
+            <span style="font-size: 14px; text-align: right; color: #232323"
+              >{{phone1}} <br />
+              {{phone2}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div style="clear: both; height: 5px"></div>
+      <div class="clr"></div>
+      <!-- Services -->
+      <div style="width: 100%; border: 0px; padding-bottom: 8px">
+        <div class="clr"></div>
+
+        <div class="">
+          <h3
+            style="
+              margin: 4px 0px;
+              background-color: transparent;
+              color: #4c713a;
+              font-weight: 600;
+              font-size: 16px;
+              text-align: left;
+            "
+          >
+            Included Bundle Services
+          </h3>
+
+          <!-- services -->
+          <div
+            class="full"
+            style="padding: 4px; background: white; border: 1px solid #80b46a"
+          >
+            {{#bundleServices}}
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr style="height: 2em">
+                  <th style="text-align: left; width: 50%">Service</th>
+                  <th>Initial Price</th>
+                  <th style="text-align: right; width: 25%">Recurring Price</th>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clr"></div>
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr style="height: 2em">
+                  <td style="width: 50%">{{description}}</td>
+                  <td style="text-align: center; width: 25%">
+                    ${{initialQuote}}
+                  </td>
+                  <td style="text-align: right; width: 25%">
+                    ${{recurringServiceCharge}}
+                  </td>
+                </tr>
+                <tr style="height: 2em">
+                  <td colspan="3">{{frequencyDescription}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clr"></div>
+            <div class="clr"></div>
+            {{#combinedAddOns}}
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr>
+                  <td style="width: 50%; padding-left: 60px">
+                    {{description}}
+                  </td>
+                  <td style="text-align: center; width: 25%">
+                    ${{initialAmount}}
+                  </td>
+                  <td style="text-align: right; width: 25%">
+                    ${{recurringAmount}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {{/combinedAddOns}}
+            <div class="clr"></div>
+            {{#combinedDiscounts}}
+            <table class="full" style="font-size: 1em">
+              <tbody>
+                <tr>
+                  <td style="width: 50%; padding-left: 60px">{{name}}</td>
+                  <td style="text-align: center; width: 25%">
+                    ${{initialAmount}}
+                  </td>
+                  <td style="text-align: right; width: 25%">
+                    ${{recurringAmount}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {{/combinedDiscounts}}
+            <div class="clr"></div>
+            {{/bundleServices}}
+          </div>
+        </div>
+      </div>
+      <div style="width: 100%; border: 0px; padding-bottom: 8px">
+        <h4
+          style="
+            margin: 4px 0px;
+            font-weight: 700;
+            font-size: 18px;
+            background-color: transparent;
+            text-align: left;
+            color: #4c713a;
+          "
+        >
+          Service and Payment Schedule Subscription
+        </h4>
+        <div
+          class="calendarNew"
+          style="
+            font-size: 14px;
+            background: white;
+            border: solid 1px #80b46a;
+            display: flex;
+          "
+        >
+          {{#serviceSchedule}}
+          <div
+            style="
+              border-right: 1px solid #80b46a;
+              border-left: 1px solid #80b46a;
+            "
+          >
+            <span
+              class=""
+              style="
+                font-size: 12px;
+                display: block;
+                padding: 6px;
+                background: #ddebd7;
+                text-align: center;
+              "
+              >{{month}} {{year}}</span
+            >
+            <span
+              style="
+                display: block;
+                font-size: 12px;
+                padding: 6px;
+                border-top: 1px solid #80b46a;
+                text-align: center;
+              "
+              >{{{recurringCharge}}}</span
+            >
+          </div>
+          <div
+            style="
+              border-right: 1px solid #80b46a;
+              border-left: 1px solid #80b46a;
+            "
+          >
+            <span
+              class=""
+              style="
+                font-size: 12px;
+                display: block;
+                padding: 6px;
+                background: #ddebd7;
+                text-align: center;
+              "
+              >{{month}} {{year}}</span
+            >
+            <span
+              style="
+                display: block;
+                font-size: 12px;
+                padding: 6px;
+                border-top: 1px solid #80b46a;
+                text-align: center;
+              "
+              >{{{recurringCharge}}}</span
+            >
+          </div>
+          {{/serviceSchedule}}
+        </div>
+      </div>
+      <div style="clear: both; height: 5px"></div>
+      <div class="half left">
+        <!-- payment info -->
+        <div>
+          <h3
+            style="
+              background-color: transparent;
+              font-size: 16px;
+              color: #4c713a;
+              text-align: left;
+              font-weight: 600;
+            "
+          >
+            Payment Information
+          </h3>
+          <div
+            style="
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+              margin-top: 12px;
+            "
+          >
+            <span style="font-weight: 700">Name:</span>
+            <span>{{billingname}}</span>
+          </div>
+          <div
+            style="
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <span style="font-weight: 700">Payment Method:</span>
+            <span>{{paymentMethod}}</span>
+          </div>
+          <p>
+            <i style="font-size: 12px"
+              >I authorize {{officeName}} to automatically bill my debit/credit
+              card upon completion of each service.</i
+            >
+          </p>
+        </div>
+
+        <!-- Billing Info -->
+        <div class="">
+          <h3
+            style="
+              background-color: transparent;
+              font-size: 16px;
+              color: #4c713a;
+              text-align: left;
+              font-weight: 600;
+            "
+          >
+            Billing Info
+          </h3>
+          <div
+            style="
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <span style="font-weight: 700">Billing Name:</span>
+            <span>{{billingname}}</span>
+          </div>
+          <div style="font-size: 12px; display: flex">
+            <span style="font-weight: 700; margin-right: auto"
+              >Billing Adress:</span
+            >
+            <span>
+              {{billingaddress}}, {{billingcity}}, {{billingstate}} {{billingzip}}</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Service Charges -->
+      <div class="half right">
+        <h3
+          style="
+            background-color: transparent;
+            font-size: 16px;
+            color: #4c713a;
+            text-align: right;
+            font-weight: 600;
+          "
+        >
+          Service Charges
+        </h3>
+        <div
+          class="full"
+          style="
+            margin-top: 12px;
+            padding: 8px;
+            background-color: white;
+            border: solid 1px #80b46a;
+            border-radius: 2px;
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+          "
+        >
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Contract SubTotal:
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            ${{contractSubtotal}}
+          </div>
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Total Add-ons:
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            ${{contractAddons}}
+          </div>
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Total Discounts:
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            ${{contractDiscount}}
+          </div>
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Tax ({{taxPercent}}):
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            ${{totalTaxAmount}}
+          </div>
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Contract Total:
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            ${{contractTotal}}
+          </div>
+        </div>
+      </div>
+      <div style="clear: both; height: 5px"></div>
+      <!-- Terms & Conditions -->
+      <div
+        class=""
+        style="
+          font-size: 14px;
+          margin-top: 8px;
+          padding-top: 4px;
+          border-top: 2px solid #80b46a;
+        "
+      >
+        <h3
+          style="
+            background-color: transparent;
+            font-size: 16px;
+            color: #4c713a;
+            text-align: left;
+            font-weight: 600;
+          "
+        >
+          Terms & Conditions
+        </h3>
+        <p style="margin: 8px; font-size: 12px">
+          You, the customer, may cancel this transaction anytime prior to
+          midnight of the third business day after the date of this transaction
+          by giving written notice of cancellation to {{officeName}}. If for any
+          reason, at any time, the contract is canceled before its completion,
+          and the initial service has been performed, customer agrees to pay the
+          full initial service charge. Upon completion of this agreement
+          treatments will continue at the same frequency until canceled by the
+          customer.
+        </p>  
+        <p style="margin: 8px">{{{contractTerms}}}</p>
+        <p style="margin: 8px; font-size: 10px;">{{{paymentsLegal}}}</p>
+      </div>
+      <!-- ---------- -->
+      <div style="clear: both; height: 5px"></div>
+      <!-- Included insects -->
+      <div style="width: 100%; border: 0px">
+        <h3
+          style="
+            background-color: transparent;
+            color: #4c713a;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: left;
+          "
+        >
+          Pest we work
+        </h3>
+        <div class="targetInsects">
+          <div style="font-size: 12px">
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/cockroach.png"
+              style="cursor: pointer"
+            />Roach
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/silverfish.png"
+              style="cursor: pointer"
+            />Silverfish
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/fireant.png"
+              style="cursor: pointer"
+            />Argentine Ants
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/cricket.png"
+              style="cursor: pointer"
+            />Crickets
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/millipede.jpg"
+              style="cursor: pointer"
+            />Millipedes
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/pillbug.png"
+              style="cursor: pointer"
+            />Sow Bugs
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/boxelder.jpg"
+              style="cursor: pointer"
+            />Box Elders
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/earwig.png"
+              style="cursor: pointer"
+            />Earwigs
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/ant.png"
+              style="cursor: pointer"
+            />Odorous Ants
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/spider.png"
+              style="cursor: pointer"
+            />Spiders
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/centipede.jpg"
+              style="cursor: pointer"
+            />Centipedes
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/cockroach.png"
+              style="cursor: pointer"
+            />Oriental Roaches
+          </div>
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/rat.png"
+              style="cursor: pointer"
+            />Mice/Rats
+          </div>
+
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/flea.png"
+              style="cursor: pointer"
+            />Fleas
+          </div>
+
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/wasp.png"
+              style="cursor: pointer"
+            />Wasps/Hornets
+          </div>
+
+          <div>
+            <img
+              src="https://d1miv8abus7gau.cloudfront.net/insects/ant.png"
+              style="cursor: pointer"
+            />Carpenter Ants
+          </div>
+        </div>
+      </div>
+      <div style="clear: both; height: 5px"></div>
+    </div>
+  </body>
+</html>
