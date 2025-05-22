@@ -735,6 +735,11 @@
   </head>
 
   <body>
+    <!-- ------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------- -->
     <div
       class="contract"
       style="
@@ -752,52 +757,152 @@
         style="
           background-color: transparent;
           height: auto;
-          display: flex;
-          justify-content: space-between;
           padding: 0;
           margin-bottom: 24px;
         "
       >
-        <div class="info">
-          <h1
-            style="
-              text-align: left;
-              color: #4c713a;
-              text-shadow: none;
-              font-weight: 700;
-              position: unset;
-              font-size: 18px;
-              padding-bottom: 8px;
-            "
-          >
-            Service Agrement
-          </h1>
-          <div
-            class=""
-            style="font-size: 12px; color: #232323; line-height: 1.18rem; text-align: left;"
-          >
-            {{officeName}}<br />
-            {{officeAddress}}<br />
-            {{officeCity}}, {{officeState}} {{officeZip}}<br />
-            {{officePhone}} | {{officeEmail}}<br />
-            License #: {{officeLicenseNumber}}
-          </div>
+        <div class="" style="margin: auto; width: fit-content">
+          <img
+            src="{{officeLogo}}"
+            style="height: 50px; width: auto; cursor: pointer"
+          />
         </div>
-        <div class="">
-          <div class="">
-            <img
-              src="{{officeLogo}}"
-              style="height: 60px; width: auto; cursor: pointer"
-            />
-            <div class="month" style="font-size: 14px; color: #232323">
+        <div
+          class="subheader"
+          style="
+            display: flex;
+            justify-content: space-between;
+            border-top: 2px solid #80b46a;
+            padding-top: 4px;
+            margin-top: 4px;
+          "
+        >
+          <div class="info">
+            <h1
+              style="
+                text-align: left;
+                color: #4c713a;
+                text-shadow: none;
+                font-weight: 700;
+                position: unset;
+                font-size: 16px;
+                padding-bottom: 8px;
+              "
+            >
+              Service Agrement
+            </h1>
+            <div
+              class="month"
+              style="
+                text-align: left;
+                font-size: 12px;
+                color: #232323;
+                padding-bottom: 4px;
+              "
+            >
               {{CurrentDateDisplay}}
+            </div>
+            <div
+              class=""
+              style="
+                font-size: 12px;
+                color: #232323;
+                line-height: 1.18rem;
+                text-align: left;
+              "
+            >
+              {{officeName}}<br />
+              {{officeAddress}}<br />
+              {{officeCity}}, {{officeState}} {{officeZip}}<br />
+              {{officePhone}} | {{officeEmail}}<br />
+              License #: {{officeLicenseNumber}}
+            </div>
+          </div>
+          <div class="" style="width: 50%">
+            <h3
+              style="
+                background-color: transparent;
+                color: #4c713a;
+                font-size: 16px;
+                font-weight: 700;
+                text-align: left;
+              "
+            >
+              Service Address
+            </h3>
+            <!-- line -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                padding: 4px 0;
+                align-items: flex-end;
+              "
+            >
+              <span style="font-size: 12px; font-weight: 700">
+                Customer Name:
+              </span>
+              <span style="font-size: 14px">{{customerName}}</span>
+            </div>
+            <!-- line -->
+            <div style="display: flex; justify-content: space-between">
+              <span
+                style="font-size: 12px; font-weight: 700; align-items: flex-end"
+              >
+                Address:
+              </span>
+              <span style="font-size: 14px; text-align: right; color: #232323"
+                >{{address}}, <br />
+                {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
+              >
+            </div>
+            <div class="">
+              <h4
+                style="
+                  background-color: transparent;
+                  font-weight: 600;
+                  color: #4c713a;
+                  text-align: left;
+                  font-size: 14px;
+                  padding: 2px 0;
+                "
+              >
+                Customer Information
+              </h4>
+              <!-- line -->
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-end;
+                "
+              >
+                <span style="font-size: 12px; font-weight: 700"> Email: </span>
+                <span style="font-size: 14px; text-align: right; color: #232323"
+                  >{{email}}
+                </span>
+              </div>
+              <!-- line -->
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding-top: 4px;
+                "
+              >
+                <span style="font-size: 12px; font-weight: 700"> Phones: </span>
+                <span style="font-size: 14px; text-align: right; color: #232323"
+                  >{{phone1}} <br />
+                  {{phone2}}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div style="clear: both; height: 5px"></div>
-      <div class="half left" style="font-size: 14px; color: #232323">
+      <div class="" style="font-size: 14px; color: #232323">
         <h3
           style="
             background-color: transparent;
@@ -810,243 +915,31 @@
           About the Service
         </h3>
         <p>{{description}}</p>
-        <p>
-          {{notes}}
-          <br />
-          {{#addOns}} {{/addOns}}
-          <br />
-          {{#addOnsRecurring}} {{/addOnsRecurring}}
-        </p>
-      </div>
-      <div class="half right">
-        <h3
-          style="
-            background-color: transparent;
-            color: #4c713a;
-            font-size: 16px;
-            font-weight: 700;
-            text-align: left;
-          "
-        >
-          Service Address
-        </h3>
-        <!-- line -->
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            padding: 4px 0;
-            align-items: flex-end;
-          "
-        >
-          <span style="font-size: 12px; font-weight: 700">
-            Customer Name:
-          </span>
-          <span style="font-size: 14px">{{customerName}}</span>
-        </div>
-        <!-- line -->
-        <div style="display: flex; justify-content: space-between">
-          <span
-            style="font-size: 12px; font-weight: 700; align-items: flex-end"
-          >
-            Address:
-          </span>
-          <span style="font-size: 14px; text-align: right; color: #232323"
-            >{{address}}, {{city}}, {{state}} {{zip}}<br />{{mapCode}}</span
-          >
-        </div>
-        <div class="">
-          <h4
-            style="
-              background-color: transparent;
-              font-weight: 600;
-              color: #4c713a;
-              text-align: left;
-              font-size: 14px;
-              padding: 2px 0;
-            "
-          >
-            Customer Information
-          </h4>
-          <!-- line -->
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-end;
-            "
-          >
-            <span style="font-size: 12px; font-weight: 700"> Email: </span>
-            <span style="font-size: 14px; text-align: right; color: #232323"
-              >{{email}}
-            </span>
-          </div>
-          <!-- line -->
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              padding-top: 4px;
-            "
-          >
-            <span style="font-size: 12px; font-weight: 700"> Phones: </span>
-            <span style="font-size: 14px; text-align: right; color: #232323"
-              >{{phone1}} <br />
-              {{phone2}}
-            </span>
-          </div>
-        </div>
+        <p>{{frequencyDescription}}</p>
+        <p>{{notes}}</p>
       </div>
 
       <div style="clear: both; height: 5px"></div>
       <div class="clr"></div>
-      <!-- Services -->
       <div style="width: 100%; border: 0px; padding-bottom: 8px">
-        <div class="clr"></div>
-
-        <div class="">
-          <h3
-            style="
-              margin: 4px 0px;
-              background-color: transparent;
-              color: #4c713a;
-              font-weight: 600;
-              font-size: 16px;
-              text-align: left;
-            "
-          >
-            Included Bundle Services
-          </h3>
-
-          <!-- services -->
-          <div
-            class="full"
-            style="padding: 4px; background: white; border: 1px solid #80b46a"
-          >
-            {{#bundleServices}}
-            <table class="full" style="font-size: 1em">
-              <tbody>
-                <tr style="height: 2em">
-                  <th style="text-align: left; width: 50%">Service</th>
-                  <th>Initial Price</th>
-                  <th style="text-align: right; width: 25%">Recurring Price</th>
-                </tr>
-              </tbody>
-            </table>
-            <div class="clr"></div>
-            <table class="full" style="font-size: 1em">
-              <tbody>
-                <tr style="height: 2em">
-                  <td style="width: 50%">{{description}}</td>
-                  <td style="text-align: center; width: 25%">
-                    ${{initialQuote}}
-                  </td>
-                  <td style="text-align: right; width: 25%">
-                    ${{recurringServiceCharge}}
-                  </td>
-                </tr>
-                <tr style="height: 2em">
-                  <td colspan="3">{{frequencyDescription}}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="clr"></div>
-            <div class="clr"></div>
-            {{#combinedAddOns}}
-            <table class="full" style="font-size: 1em">
-              <tbody>
-                <tr>
-                  <td style="width: 50%; padding-left: 60px">
-                    {{description}}
-                  </td>
-                  <td style="text-align: center; width: 25%">
-                    ${{initialAmount}}
-                  </td>
-                  <td style="text-align: right; width: 25%">
-                    ${{recurringAmount}}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            {{/combinedAddOns}}
-            <div class="clr"></div>
-            {{#combinedDiscounts}}
-            <table class="full" style="font-size: 1em">
-              <tbody>
-                <tr>
-                  <td style="width: 50%; padding-left: 60px">{{name}}</td>
-                  <td style="text-align: center; width: 25%">
-                    ${{initialAmount}}
-                  </td>
-                  <td style="text-align: right; width: 25%">
-                    ${{recurringAmount}}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            {{/combinedDiscounts}}
-            <div class="clr"></div>
-            {{/bundleServices}}
-          </div>
-        </div>
-      </div>
-      <div style="width: 100%; border: 0px; padding-bottom: 8px">
-        <h4
+        <h3
           style="
             margin: 4px 0px;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             background-color: transparent;
             text-align: left;
             color: #4c713a;
           "
         >
           Service and Payment Schedule Subscription
-        </h4>
+        </h3>
         <div
           class="calendarNew"
-          style="
-            font-size: 14px;
-            background: white;
-            border: solid 1px #80b46a;
-            display: flex;
-          "
+          style="font-size: 14px; background: white; display: flex"
         >
           {{#serviceSchedule}}
-          <div
-            style="
-              border-right: 1px solid #80b46a;
-              border-left: 1px solid #80b46a;
-            "
-          >
-            <span
-              class=""
-              style="
-                font-size: 12px;
-                display: block;
-                padding: 6px;
-                background: #ddebd7;
-                text-align: center;
-              "
-              >{{month}} {{year}}</span
-            >
-            <span
-              style="
-                display: block;
-                font-size: 12px;
-                padding: 6px;
-                border-top: 1px solid #80b46a;
-                text-align: center;
-              "
-              >{{{recurringCharge}}}</span
-            >
-          </div>
-          <div
-            style="
-              border-right: 1px solid #80b46a;
-              border-left: 1px solid #80b46a;
-            "
-          >
+          <div style="border: 1px solid #80b46a; width: 100%">
             <span
               class=""
               style="
@@ -1087,29 +980,10 @@
           >
             Payment Information
           </h3>
-          <div
-            style="
-              font-size: 12px;
-              display: flex;
-              justify-content: space-between;
-              margin-top: 12px;
-            "
-          >
-            <span style="font-weight: 700">Name:</span>
-            <span>{{billingname}}</span>
-          </div>
-          <div
-            style="
-              font-size: 12px;
-              display: flex;
-              justify-content: space-between;
-            "
-          >
-            <span style="font-weight: 700">Payment Method:</span>
-            <span>{{paymentMethod}}</span>
-          </div>
+        </div>
+        <div>
           <p>
-            <i style="font-size: 12px"
+            <i style="font-size: 14px"
               >I authorize {{officeName}} to automatically bill my debit/credit
               card upon completion of each service.</i
             >
@@ -1121,7 +995,7 @@
           <h3
             style="
               background-color: transparent;
-              font-size: 16px;
+              font-size: 14px;
               color: #4c713a;
               text-align: left;
               font-weight: 600;
@@ -1141,10 +1015,11 @@
           </div>
           <div style="font-size: 12px; display: flex">
             <span style="font-weight: 700; margin-right: auto"
-              >Billing Adress:</span
+              >Billing Address:</span
             >
             <span>
-              {{billingaddress}}, {{billingcity}}, {{billingstate}} {{billingzip}}</span
+              {{billingaddress}}, <br />
+              {{billingcity}}, {{billingstate}} {{billingzip}}</span
             >
           </div>
         </div>
@@ -1174,8 +1049,43 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
+            margin-left: 2px;
           "
         >
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Initial Service Cost:
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            {{initialQuote}}
+          </div>
+          <div
+            class="priceLabel"
+            style="width: auto; font-size: 12px; font-weight: 400"
+          >
+            Yearly Recurring Cost:
+          </div>
+          <div
+            class="priceValue"
+            style="
+              width: auto;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            "
+          >
+            {{recurringCharge}}
+          </div>
           <div
             class="priceLabel"
             style="width: auto; font-size: 12px; font-weight: 400"
@@ -1192,40 +1102,6 @@
             "
           >
             ${{contractSubtotal}}
-          </div>
-          <div
-            class="priceLabel"
-            style="width: auto; font-size: 12px; font-weight: 400"
-          >
-            Total Add-ons:
-          </div>
-          <div
-            class="priceValue"
-            style="
-              width: auto;
-              text-align: right;
-              font-size: 12px;
-              font-weight: 700;
-            "
-          >
-            ${{contractAddons}}
-          </div>
-          <div
-            class="priceLabel"
-            style="width: auto; font-size: 12px; font-weight: 400"
-          >
-            Total Discounts:
-          </div>
-          <div
-            class="priceValue"
-            style="
-              width: auto;
-              text-align: right;
-              font-size: 12px;
-              font-weight: 700;
-            "
-          >
-            ${{contractDiscount}}
           </div>
           <div
             class="priceLabel"
@@ -1264,44 +1140,15 @@
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
-      <!-- Terms & Conditions -->
+      <!-- Included insects -->
       <div
-        class=""
         style="
-          font-size: 14px;
-          margin-top: 8px;
-          padding-top: 4px;
+          width: 100%;
+          border: 0px;
           border-top: 2px solid #80b46a;
+          padding-top: 4px;
         "
       >
-        <h3
-          style="
-            background-color: transparent;
-            font-size: 16px;
-            color: #4c713a;
-            text-align: left;
-            font-weight: 600;
-          "
-        >
-          Terms & Conditions
-        </h3>
-        <p style="margin: 8px; font-size: 12px">
-          You, the customer, may cancel this transaction anytime prior to
-          midnight of the third business day after the date of this transaction
-          by giving written notice of cancellation to {{officeName}}. If for any
-          reason, at any time, the contract is canceled before its completion,
-          and the initial service has been performed, customer agrees to pay the
-          full initial service charge. Upon completion of this agreement
-          treatments will continue at the same frequency until canceled by the
-          customer.
-        </p>  
-        <p style="margin: 8px">{{{contractTerms}}}</p>
-        <p style="margin: 8px; font-size: 10px;">{{{paymentsLegal}}}</p>
-      </div>
-      <!-- ---------- -->
-      <div style="clear: both; height: 5px"></div>
-      <!-- Included insects -->
-      <div style="width: 100%; border: 0px">
         <h3
           style="
             background-color: transparent;
@@ -1413,6 +1260,43 @@
               style="cursor: pointer"
             />Carpenter Ants
           </div>
+        </div>
+      </div>
+      <!-- ---------- -->
+      <div style="clear: both; height: 5px"></div>
+      <!-- Terms & Conditions -->
+      <div
+        class=""
+        style="
+          font-size: 14px;
+          margin-top: 8px;
+          padding-top: 4px;
+          border-top: 2px solid #80b46a;
+        "
+      >
+        <h3
+          style="
+            background-color: transparent;
+            font-size: 16px;
+            color: #4c713a;
+            text-align: left;
+            font-weight: 600;
+          "
+        >
+          Terms &amp; Conditions
+        </h3>
+        <p style="margin: 8px; font-size: 12px">
+          You, the customer, may cancel this transaction anytime prior to
+          midnight of the third business day after the date of this transaction
+          by giving written notice of cancellation to {{officeName}}. If for any
+          reason, at any time, the contract is canceled before its completion,
+          and the initial service has been performed, customer agrees to pay the
+          full initial service charge. Upon completion of this agreement
+          treatments will continue at the same frequency until canceled by the
+          customer.
+        </p>
+        <div style="margin: 8px;">
+          {{{contractTerms}}}
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
