@@ -917,21 +917,10 @@
             text-align: left;
           "
         >
-          Included Bundle Services
+          About the Service
         </h3>
-        {{#bundleServices}}
-        <div style="font-size: 14px; margin-bottom: 8px; padding: 4px">
-          <p style="margin: 0; padding: 8px 16px 8px 8px">
-            <strong>{{description}}</strong>
-          </p>
-          <p style="margin: 0; padding: 8px 16px 8px 16px">
-            {{frequencyDescription}}
-          </p>
-          {{#combinedAddOns}}
-          <p style="margin: 0; padding: 8px 16px 8px 16px">{{description}}</p>
-          {{/combinedAddOns}}
-        </div>
-        {{/bundleServices}}
+        <p>{{description}}</p>
+        <p>{{frequencyDescription}}</p>
         <p>{{notes}}</p>
       </div>
 
@@ -984,142 +973,6 @@
             </span>
           </div>
           {{/serviceSchedule}}
-        </div>
-      </div>
-      <div style="clear: both; height: 24px"></div>
-      <div class="full" style="width: 100%; border: 0px; padding-bottom: 8px">
-        <h3
-          style="
-            margin: 4px 0px;
-            font-weight: 700;
-            font-size: 16px;
-            background-color: transparent;
-            text-align: left;
-            color: #4c713a;
-          "
-        >
-          Price per Service
-        </h3>
-        <div
-            style="
-              height: auto;
-              margin: 0;
-              display: flex;
-              justify-content: space-between;
-              padding: 2px 8px;
-            "
-          >
-            <span
-              style="
-                font-size: 12px;
-                text-align: center;
-                display: inline-block;
-                padding: 6px 0;
-              "
-            >
-              Service name
-            </span>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 50% 50%;
-                width: 40%;
-                align-items: end;
-                justify-items: end;
-                padding: 0 8px;
-              "
-            >
-              <span
-                class=""
-                style="
-                  font-size: 12px;
-                  display: block;
-                  padding: 6px 0;
-                  color: #232323;
-                  text-align: center;
-                  height: unset;
-                "
-              >
-                Initial Price
-              </span>
-              <span
-                style="
-                  font-size: 12px;
-                  text-align: center;
-                  display: inline-block;
-                  padding: 6px 0;
-                "
-              >
-                Recurring Price
-              </span>
-            </div>
-          </div>
-        <div
-          class=""
-          style="
-            font-size: 14px;
-            background: white;
-            padding: 4px;
-            border: 1px solid #80b46a;
-            border-radius: 2px;
-          "
-        >
-        
-          {{#bundleServices}}
-          <div
-            style="
-              height: auto;
-              margin: 0;
-              display: flex;
-              justify-content: space-between;
-            "
-          >
-            <span
-              style="
-                font-size: 12px;
-                text-align: center;
-                display: inline-block;
-                padding: 6px 0;
-              "
-            >
-              {{{description}}}
-            </span>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 50% 50%;
-                width: 40%;
-                align-items: end;
-                justify-items: end;
-                padding: 0 8px;
-              "
-            >
-              <span
-                class=""
-                style="
-                  font-size: 12px;
-                  display: block;
-                  padding: 6px 0;
-                  color: #232323;
-                  text-align: center;
-                  height: unset;
-                "
-              >
-                ${{initialQuote}}
-              </span>
-              <span
-                style="
-                  font-size: 12px;
-                  text-align: center;
-                  display: inline-block;
-                  padding: 6px 0;
-                "
-              >
-                {{{recurringCharge}}}
-              </span>
-            </div>
-          </div>
-          {{/bundleServices}}
         </div>
       </div>
       <div style="clear: both; height: 24px"></div>
