@@ -758,6 +758,7 @@
           margin-bottom: 24px;
         "
       >
+      
         <div class="info">
           <h1
             style="
@@ -765,16 +766,32 @@
               color: #4c713a;
               text-shadow: none;
               font-weight: 700;
-              position: unset;
-              font-size: 18px;
+              position: static !important;
+              float: unset !important;
+              font-size: 16px;
               padding-bottom: 8px;
             "
           >
             Service Agrement
           </h1>
           <div
+              class="month"
+              style="
+                text-align: left;
+                font-size: 12px;
+                color: #232323;
+                padding-bottom: 4px;
+              "
+            >
+              {{date}}
+            </div>
+          <div
             class=""
-            style="font-size: 12px; color: #232323; line-height: 1.18rem; text-align: left;"
+            style="
+              font-size: 
+              12px; color: #232323; 
+              line-height: 1.18rem; 
+              text-align: left;"
           >
             {{officeName}}<br />
             {{officeAddress}}<br />
@@ -995,7 +1012,7 @@
           style="
             margin: 4px 0px;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             background-color: transparent;
             text-align: left;
             color: #4c713a;
@@ -1121,7 +1138,7 @@
           <h3
             style="
               background-color: transparent;
-              font-size: 16px;
+              font-size: 14px;
               color: #4c713a;
               text-align: left;
               font-weight: 600;
@@ -1274,35 +1291,7 @@
           border-top: 2px solid #80b46a;
         "
       >
-        <h3
-          style="
-            background-color: transparent;
-            font-size: 16px;
-            color: #4c713a;
-            text-align: left;
-            font-weight: 600;
-          "
-        >
-          Terms & Conditions
-        </h3>
-        <p style="margin: 8px; font-size: 12px">
-          You, the customer, may cancel this transaction anytime prior to
-          midnight of the third business day after the date of this transaction
-          by giving written notice of cancellation to {{officeName}}. If for any
-          reason, at any time, the contract is canceled before its completion,
-          and the initial service has been performed, customer agrees to pay the
-          full initial service charge. Upon completion of this agreement
-          treatments will continue at the same frequency until canceled by the
-          customer.
-        </p>  
-        <p style="margin: 8px">{{{contractTerms}}}</p>
-        <p style="margin: 8px; font-size: 10px;">{{{paymentsLegal}}}</p>
-      </div>
-      <!-- ---------- -->
-      <div style="clear: both; height: 5px"></div>
-      <!-- Included insects -->
-      <div style="width: 100%; border: 0px">
-        <h3
+       <h3
           style="
             background-color: transparent;
             color: #4c713a;
@@ -1311,7 +1300,7 @@
             text-align: left;
           "
         >
-          Pest we work
+          Pests we handle
         </h3>
         <div class="targetInsects">
           <div style="font-size: 12px">
@@ -1416,6 +1405,52 @@
         </div>
       </div>
       <div style="clear: both; height: 5px"></div>
+      <div
+        class=""
+        style="
+          font-size: 14px;
+          margin-top: 8px;
+          padding-top: 4px;
+          border-top: 2px solid #80b46a;
+        "
+      >
+       <h3
+          style="
+            background-color: transparent;
+            font-size: 16px;
+            color: #4c713a;
+            text-align: left;
+            font-weight: 600;
+          "
+        >
+          Terms & Conditions
+        </h3>
+        <p style="margin: 8px; font-size: 12px">
+          You, the customer, may cancel this transaction anytime prior to
+          midnight of the third business day after the date of this transaction
+          by giving written notice of cancellation to {{officeName}}. If for any
+          reason, at any time, the contract is canceled before its completion,
+          and the initial service has been performed, customer agrees to pay the
+          full initial service charge. Upon completion of this agreement
+          treatments will continue at the same frequency until canceled by the
+          customer.
+        </p>  
+        <p style="margin: 8px">{{{contractTerms}}}</p>
+        <p style="margin: 8px; font-size: 10px;">{{{paymentsLegal}}}</p>
+      </div>
+      <!-- ---------- -->
+      <div style="clear: both; height: 5px"></div>
+      <!-- Included insects -->
+      <div style="width: 100%; border: 0px">
+        <h3
+          style="
+            background-color: transparent;
+            color: #4c713a;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: left;
+          "
+        >
     </div>
   </body>
 </html>
