@@ -907,7 +907,7 @@
       </div>
 
       <div style="clear: both; height: 5px"></div>
-      
+
       <div style="clear: both; height: 5px"></div>
       <div class="clr"></div>
       <div class="full" style="width: 100%; border: 0px; padding-bottom: 8px">
@@ -974,12 +974,21 @@
           Included Bundle Services
         </h3>
         <div
+          style="
+            height: auto;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 8px;
+          "
+        >
+          <div
             style="
-              height: auto;
-              margin: 0;
-              display: flex;
-              justify-content: space-between;
-              padding: 2px 8px;
+              display: grid;
+              grid-template-columns: 50% 50%;
+              width: 50%;
+              align-items: start;
+              justify-items: start;
             "
           >
             <span
@@ -988,9 +997,9 @@
                 text-align: center;
                 display: inline-block;
                 padding: 6px 0;
+                font-weight: 700;
               "
-            >
-            <span style="font-weight: 700">Service Name</span>
+              >Service Name
             </span>
             <span
               style="
@@ -998,57 +1007,56 @@
                 text-align: center;
                 display: inline-block;
                 padding: 6px 0;
+                font-weight: 700;
               "
-            >
-            <span style="font-weight: 700">Frequency</span>
+              >Frequency
             </span>
-            <div
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 50% 50%;
+              width: 40%;
+              align-items: end;
+              justify-items: end;
+              padding: 0 8px;
+            "
+          >
+            <span
               style="
-                display: grid;
-                grid-template-columns: 50% 50%;
-                width: 40%;
-                align-items: end;
-                justify-items: end;
-                padding: 0 8px;
+                font-size: 12px;
+                font-weight: 700;
+                display: block;
+                padding: 6px 0;
+                color: #232323;
+                text-align: center;
+                height: unset;
               "
             >
-              <span
-                class=""
-                style="
-                  font-size: 12px;
-                  font-weight: 700
-                  display: block;
-                  padding: 6px 0;
-                  color: #232323;
-                  text-align: center;
-                  height: unset;
-                "
-              >
-              <span style="font-weight: 700">Initial Price</span>
-              </span>
-              <span
-                style="
-                  font-size: 12px;
-                  text-align: center;
-                  display: inline-block;
-                  padding: 6px 0;
-                "
-              >
-                <span style="font-weight: 700">Recurring Price</span>
-              </span>
-            </div>
+              Initial Price
+            </span>
+            <span
+              style="
+                font-size: 12px;
+                text-align: center;
+                display: inline-block;
+                padding: 6px 0;
+                font-weight: 700;
+              "
+              >Recurring Price
+            </span>
           </div>
+        </div>
         <div
           class=""
           style="
             font-size: 14px;
             background: white;
-            padding: 4px;
+            padding: 4px 12px;
             border: 1px solid #80b46a;
             border-radius: 2px;
           "
         >
-        
           {{#bundleServices}}
           <div
             style="
@@ -1058,26 +1066,36 @@
               justify-content: space-between;
             "
           >
-            <span
+            <div
               style="
-                font-size: 12px;
-                text-align: center;
-                display: inline-block;
-                padding: 6px 0;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                width: 50%;
+                align-items: start;
+                justify-items: start;
               "
             >
-              {{{description}}}
-            </span>
-            <span
-              style="
-                font-size: 12px;
-                text-align: center;
-                display: inline-block;
-                padding: 6px 0;
-              "
-            >
-              {{{frequencyDescription}}}
-            </span>
+              <span
+                style="
+                  font-size: 12px;
+                  text-align: center;
+                  display: inline-block;
+                  padding: 6px 0;
+                "
+              >
+                {{{description}}}
+              </span>
+              <span
+                style="
+                  font-size: 12px;
+                  text-align: center;
+                  display: inline-block;
+                  padding: 6px 0;
+                "
+              >
+                {{{frequencyDescription}}}
+              </span>
+            </div>
             <div
               style="
                 display: grid;
